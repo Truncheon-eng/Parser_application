@@ -1,0 +1,198 @@
+[
+    {
+        "delivery": 25.1,
+        "successRate": 85.71,
+        "name": "AK-47 | The Empress",
+        "image": "https://screenshots.cs.money/csmoney2/a1710c026d701af6d9484db5fe7fed8d_image.jpg",
+        "isSouvenir": false,
+        "isStatTrak": true,
+        "quality": "fn",
+        "rarity": "Covert",
+        "type": 3,
+        "collection": {
+            "name": "Spectrum 2",
+            "image": null
+        },
+        "float": 0.0699542984366417,
+        "stickers": [
+            {
+                "name": "Sticker | Health (Gold)",
+                "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/alyx/health_foil.0474a397fe8f5f961ac21589726b6d377b46bb5f.png"
+            },
+            {
+                "name": "Sticker | Health (Gold)",
+                "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/alyx/health_foil.0474a397fe8f5f961ac21589726b6d377b46bb5f.png"
+            },
+            {
+                "name": "Sticker | ropz (Glitter) | Paris 2023",
+                "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/paris2023/sig_ropz_glitter.0f0a49f0780b1c0b9d003f77eb9c304019cc2bd6.png"
+            },
+            "undefind"
+        ],
+        "pricing": {
+            "default": 400.57,
+            "priceBeforeDiscount": 406.37,
+            "extra": {
+                "stickers": 5.8
+            },
+            "discount": 0.2127,
+            "computed": 319.92
+        },
+        "links": "https://3d.cs.money/item/a1710c026d701af6d9484db5fe7fed8d"
+    },
+    {
+        "delivery": 1.39,
+        "successRate": 100,
+        "name": "AK-47 | The Empress",
+        "image": "https://screenshots.cs.money/csmoney2/125cea50d66be005d24092c82bc7622b_image.jpg",
+        "isSouvenir": false,
+        "isStatTrak": true,
+        "quality": "fn",
+        "rarity": "Covert",
+        "type": 3,
+        "collection": {
+            "name": "Spectrum 2",
+            "image": null
+        },
+        "float": 0.04630688950419426,
+        "stickers": [
+            "undefind",
+            "undefind",
+            "undefind",
+            {
+                "name": "Sticker | Natus Vincere (Gold) | Stockholm 2021",
+                "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/stockh2021/navi_gold.1eb5701fd98013cbaf65a90cd867568cb528daca.png"
+            }
+        ],
+        "pricing": {
+            "default": 400.57,
+            "priceBeforeDiscount": 403.87,
+            "extra": {
+                "stickers": 3.3
+            },
+            "discount": -0.0523,
+            "computed": 425
+        },
+        "links": "https://3d.cs.money/item/125cea50d66be005d24092c82bc7622b"
+    },
+    {
+        "delivery": 0,
+        "successRate": null,
+        "name": "AK-47 | The Empress",
+        "image": "https://screenshots.cs.money/csmoney2/a1785f6f541295baa67a0070f114b2d8_image.jpg",
+        "isSouvenir": false,
+        "isStatTrak": true,
+        "quality": "fn",
+        "rarity": "Covert",
+        "type": 3,
+        "collection": {
+            "name": "Spectrum 2",
+            "image": null
+        },
+        "float": 0.06899502128362656,
+        "stickers": [
+            {
+                "name": "Sticker | Natus Vincere (Gold) | Paris 2023",
+                "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/paris2023/navi_gold.6bcddf1ce7669a2d3b367d5a81482fa77dfc7840.png"
+            },
+            {
+                "name": "Sticker | Natus Vincere (Gold) | Paris 2023",
+                "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/paris2023/navi_gold.6bcddf1ce7669a2d3b367d5a81482fa77dfc7840.png"
+            },
+            {
+                "name": "Sticker | Natus Vincere (Gold) | Paris 2023",
+                "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/paris2023/navi_gold.6bcddf1ce7669a2d3b367d5a81482fa77dfc7840.png"
+            },
+            {
+                "name": "Sticker | Natus Vincere (Gold) | Paris 2023",
+                "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/paris2023/navi_gold.6bcddf1ce7669a2d3b367d5a81482fa77dfc7840.png"
+            }
+        ],
+        "pricing": {
+            "default": 400.57,
+            "priceBeforeDiscount": 409.97,
+            "extra": {
+                "stickers": 9.7
+            },
+            "discount": 0.1308,
+            "computed": 356.36
+        },
+        "links": "https://3d.cs.money/item/a1785f6f541295baa67a0070f114b2d8"
+    },
+    {
+        "delivery": 115.19,
+        "successRate": 100,
+        "name": "AK-47 | The Empress",
+        "image": "https://screenshots.cs.money/csmoney2/308dc56dc907f23d2a42d13d8daeab75_image.jpg",
+        "isSouvenir": false,
+        "isStatTrak": true,
+        "quality": "fn",
+        "rarity": "Covert",
+        "type": 3,
+        "collection": {
+            "name": "Spectrum 2",
+            "image": null
+        },
+        "float": 0.05861472710967064,
+        "stickers": [
+            {
+                "name": "Sticker | jkaem (Gold) | Katowice 2019",
+                "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/katowice2019/sig_jkaem_gold.e72bf36232af3198126c997179b7acc22a179976.png"
+            },
+            "undefind",
+            {
+                "name": "Sticker | AZR (Gold) | Katowice 2019",
+                "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/katowice2019/sig_azr_gold.967555a5c0892cc0bc7dd7964336ff249721e174.png"
+            },
+            "undefind"
+        ],
+        "pricing": {
+            "default": 406.03,
+            "priceBeforeDiscount": 409.93,
+            "extra": {
+                "stickers": 3.9
+            },
+            "discount": -0.1775,
+            "computed": 482.7
+        },
+        "links": "https://3d.cs.money/item/308dc56dc907f23d2a42d13d8daeab75"
+    },
+    {
+        "delivery": 3.99,
+        "successRate": 88.21,
+        "name": "AK-47 | The Empress",
+        "image": "https://screenshots.cs.money/csmoney2/ed7431984db7b527a50a08b8dfd7b33a_image.jpg",
+        "isSouvenir": false,
+        "isStatTrak": false,
+        "quality": "fn",
+        "rarity": "Covert",
+        "type": 3,
+        "collection": {
+            "name": "Spectrum 2",
+            "image": null
+        },
+        "float": 0.06719929724931717,
+        "stickers": [
+            {
+                "name": "Sticker | Global Elite (Foil)",
+                "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/skillgroup_capsule/global_elite_normal.6d4d9bab93bdeca36fa9ca34b5204c20407fe58c.png"
+            },
+            "undefind",
+            {
+                "name": "Sticker | Global Elite (Foil)",
+                "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/skillgroup_capsule/global_elite_normal.6d4d9bab93bdeca36fa9ca34b5204c20407fe58c.png"
+            },
+            "undefind"
+        ],
+        "pricing": {
+            "default": 159.39,
+            "priceBeforeDiscount": 166.19,
+            "extra": {
+                "stickers": 6.8
+            },
+            "discount": 0.1907,
+            "computed": 134.49
+        },
+        "links": "https://3d.cs.money/item/ed7431984db7b527a50a08b8dfd7b33a"
+    }
+]
