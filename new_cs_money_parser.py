@@ -2,21 +2,6 @@ import requests
 import json
 # from forex_python.converter import CurrencyRates # добавление библиотеки, отслеживающий курсы валют
 # currency = CurrencyRates()
-dictionary_info = {
-    "name": "Wasteland Rebel",
-    "minPrice": 10.0,
-    "maxPrice": 10000000.0,
-    "type": 5,
-    "quality": "ft",
-    "color": "undefind",
-    "hasNameTag": "undefind",
-    "hasStickers": "true",
-    "isSouvenir": "undefind",
-    "isStatTrak": "true",
-    "rarity": "Covert",
-    "minFade": "undefind",
-    "maxFade": "undefind",
-}
 def find_information(info): #info - информация об объекте
     link = "https://cs.money/1.0/market/sell-orders?limit=60"
     #так как я удаляю некоторые параметры, то в info эти парметры уже не содержатся, тогда в info будут содержаться все необходимые для удаления ключи и их значения
@@ -24,7 +9,6 @@ def find_information(info): #info - информация об объекте
         if info[element] == "undefind":
             del info[element]
     req = requests.get(link, params = info)
-    print(req.url)
     content = req.json() #возвращает мне массив, состоящий из необходимых элементов
     if content.get("errors") == None: # Обработка ошибки
         response_list = [] #список, в который будет запихнуто огромное кол-во items
@@ -49,7 +33,7 @@ def find_information(info): #info - информация об объекте
             # response["rarity"] = item_asset.get("rarity")
             # response["type"] = item_asset.get("type")
             # response["float"] = item_asset.get("float")
-            keys = ["isSouvenir", "isStatTrak", "quality", "rarity", "type", "float"]
+            keys = ["isSouvenir", "isStatTrak", "quality", "rarity", "float"]
             for keys_element in keys:
                 response[keys_element] = item_asset.get(keys_element) #цикл для заполнения соответственно таких вещей: response["<>"] = item.asset.get("<>")
             response["stickers"] = []
@@ -66,6 +50,5 @@ def find_information(info): #info - информация об объекте
         return response_list
     else:
         with open('src/data_cs_money.json', 'w') as file:
-            json.dump([{"errors": "Ничего не найдено"}], file, indent=4, ensure_ascii=True)
-        return [{"errors": "Ничего не найдено"}]
-find_information(dictionary_info)
+            json.dump([{"errors": "No information with this request"}], file, indent=4, ensure_ascii=True)
+        return [{"errors": "No information with this request"}]

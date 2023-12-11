@@ -1,172 +1,106 @@
 [
     {
         "delivery": 0,
-        "successRate": "undefind",
-        "name": "AK-47 | The Empress",
-        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhnwMzJemkV09m7hJKOhOTLP7LWnn9u5MRjjeyP89SkjAS2-0Q4MDjwLIeTcQNtaVGG_VXskrq9g8S6uMzPnSNl7ygjtmGdwUJqmcyS6w",
+        "name": "M4A1-S | Printstream",
+        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO1gb-Gw_alIITBhGJf_NZlmOzA-LP5gVO8vywwMiukcZice1M9ZViD-ATrle7v15O46cifzHFhunZ243yInxW-10sZOrBp1qTLVxzAUNxEoFAP",
         "isSouvenir": false,
         "isStatTrak": false,
-        "quality": "factory-new",
+        "quality": "minimal-wear",
         "rarity": "Extraordinary",
-        "type": "Rifle",
-        "collection": {
-            "name": "The Spectrum 2 Collection",
-            "image": "null"
-        },
-        "float": 0.06643964,
+        "float": 0.11886676400000001,
         "stickers": [
             {
-                "name": "Have Fun",
-                "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/stickers2/havefun.dbc426783b59e7619531d205065c88916e53922a.png"
+                "name": "Kawaii Killer Terrorist"
             },
             {
-                "name": " Good Game",
-                "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/stickers2/goodgame.c27f2ad1063ff6a31520152e2917651e1884a2ee.png"
+                "name": " S1ren (Glitter) | Antwerp 2022"
             },
             {
-                "name": " Good Luck",
-                "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/stickers2/goodluck.213c85007697f21cec96a28eec708c49c577cbb2.png"
+                "name": " S1ren (Glitter) | Antwerp 2022"
+            },
+            {
+                "name": " S1ren (Glitter) | Antwerp 2022"
             }
         ],
-        "pricing": {
-            "default": 150.2336,
-            "priceBeforeDiscount": 150.2336,
-            "extra": "null",
-            "discount": 0,
-            "computed": 142.72191999999998
-        },
-        "links": "steam://rungame/730/76561202255233023/+csgo_econ_action_preview%20S76561199099693751A30698218369D3353568361625604031"
+        "price": 220.86
     },
     {
-        "delivery": 0,
-        "successRate": "undefind",
-        "name": "AK-47 | The Empress",
-        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhnwMzJemkV09m7hJKOhOTLP7LWnn9u5MRjjeyP89SkjAS2-0Q4MDjwLIeTcQNtaVGG_VXskrq9g8S6uMzPnSNl7ygjtmGdwUJqmcyS6w",
+        "delivery": 32,
+        "name": "M4A1-S | Printstream",
+        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO1gb-Gw_alIITBhGJf_NZlmOzA-LP5gVO8vywwMiukcZice1M9ZViD-ATrle7v15O46cifzHFhunZ243yInxW-10sZOrBp1qTLVxzAUNxEoFAP",
         "isSouvenir": false,
         "isStatTrak": false,
-        "quality": "factory-new",
+        "quality": "minimal-wear",
         "rarity": "Extraordinary",
-        "type": "Rifle",
-        "collection": {
-            "name": "The Spectrum 2 Collection",
-            "image": "null"
-        },
-        "float": 0.06926054,
+        "float": 0.13221434,
         "stickers": [
             {
-                "name": "Global Elite",
-                "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/skillgroup_capsule/global_elite.3660cac91949fa340155ffa53c838f29c29f453d.png"
+                "name": "Battle Scarred (Holo)"
             }
         ],
-        "pricing": {
-            "default": 150.2336,
-            "priceBeforeDiscount": 150.2336,
-            "extra": "null",
-            "discount": 0,
-            "computed": 142.72191999999998
-        },
-        "links": "steam://rungame/730/76561202255233023/+csgo_econ_action_preview%20S76561199212742159A27161512711D3219584048355749695"
+        "price": 215.32
     },
     {
-        "delivery": 0,
-        "successRate": "undefind",
-        "name": "AK-47 | The Empress",
-        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhnwMzJemkV09m7hJKOhOTLP7LWnn9u5MRjjeyP89SkjAS2-0Q4MDjwLIeTcQNtaVGG_VXskrq9g8S6uMzPnSNl7ygjtmGdwUJqmcyS6w",
+        "delivery": 128,
+        "name": "M4A1-S | Printstream",
+        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO1gb-Gw_alIITBhGJf_NZlmOzA-LP5gVO8vywwMiukcZice1M9ZViD-ATrle7v15O46cifzHFhunZ243yInxW-10sZOrBp1qTLVxzAUNxEoFAP",
         "isSouvenir": false,
         "isStatTrak": false,
-        "quality": "factory-new",
+        "quality": "minimal-wear",
         "rarity": "Extraordinary",
-        "type": "Rifle",
-        "collection": {
-            "name": "The Spectrum 2 Collection",
-            "image": "null"
-        },
-        "float": 0.06837215,
+        "float": 0.10438786,
         "stickers": [
             {
-                "name": "Killjoy",
-                "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/halo/killjoy.3b15269c715684752bbd32b84c8ad4b4556003cf.png"
+                "name": "Neon Opal Strafe (Holo)"
             },
             {
-                "name": " Killjoy",
-                "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/halo/killjoy.3b15269c715684752bbd32b84c8ad4b4556003cf.png"
+                "name": " Neon Opal Strafe (Holo)"
             },
             {
-                "name": " Killjoy",
-                "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/halo/killjoy.3b15269c715684752bbd32b84c8ad4b4556003cf.png"
-            },
-            {
-                "name": " Killjoy",
-                "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/halo/killjoy.3b15269c715684752bbd32b84c8ad4b4556003cf.png"
+                "name": " Neon Opal Strafe (Holo)"
             }
         ],
-        "pricing": {
-            "default": 150.2336,
-            "priceBeforeDiscount": 150.2336,
-            "extra": "null",
-            "discount": 0,
-            "computed": 142.72191999999998
-        },
-        "links": "steam://rungame/730/76561202255233023/+csgo_econ_action_preview%20S76561199213940006A27161548587D14764066233808849785"
+        "price": 233.42
     },
     {
-        "delivery": 0,
-        "successRate": "undefind",
-        "name": "AK-47 | The Empress",
-        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhnwMzJemkV09m7hJKOhOTLP7LWnn9u5MRjjeyP89SkjAS2-0Q4MDjwLIeTcQNtaVGG_VXskrq9g8S6uMzPnSNl7ygjtmGdwUJqmcyS6w",
+        "delivery": 176,
+        "name": "M4A1-S | Printstream",
+        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO1gb-Gw_alIITBhGJf_NZlmOzA-LP5gVO8vywwMiukcZice1M9ZViD-ATrle7v15O46cifzHFhunZ243yInxW-10sZOrBp1qTLVxzAUNxEoFAP",
         "isSouvenir": false,
         "isStatTrak": false,
-        "quality": "factory-new",
+        "quality": "minimal-wear",
         "rarity": "Extraordinary",
-        "type": "Rifle",
-        "collection": {
-            "name": "The Spectrum 2 Collection",
-            "image": "null"
-        },
-        "float": 0.069973916,
+        "float": 0.11956023399999999,
         "stickers": [
             {
-                "name": "Counter-Tech",
-                "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/shattered_web/counter_tech.0865e7c46d85164890b76ebefe2750a6b7fdd694.png"
+                "name": "Battle Scarred (Holo)"
+            },
+            {
+                "name": " Battle Scarred (Holo)"
+            },
+            {
+                "name": " Battle Scarred (Holo)"
+            },
+            {
+                "name": " Battle Scarred (Holo)"
             }
         ],
-        "pricing": {
-            "default": 150.2336,
-            "priceBeforeDiscount": 150.2336,
-            "extra": "null",
-            "discount": 0,
-            "computed": 142.72191999999998
-        },
-        "links": "steam://rungame/730/76561202255233023/+csgo_econ_action_preview%20S76561199213940006A27161548442D16906669700592617779"
+        "price": 258.09
     },
     {
-        "delivery": 0,
-        "successRate": "undefind",
-        "name": "AK-47 | The Empress",
-        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhnwMzJemkV09m7hJKOhOTLP7LWnn9u5MRjjeyP89SkjAS2-0Q4MDjwLIeTcQNtaVGG_VXskrq9g8S6uMzPnSNl7ygjtmGdwUJqmcyS6w",
+        "delivery": 32,
+        "name": "M4A1-S | Printstream",
+        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO1gb-Gw_alIITBhGJf_NZlmOzA-LP5gVO8vywwMiukcZice1M9ZViD-ATrle7v15O46cifzHFhunZ243yInxW-10sZOrBp1qTLVxzAUNxEoFAP",
         "isSouvenir": false,
         "isStatTrak": false,
-        "quality": "factory-new",
+        "quality": "minimal-wear",
         "rarity": "Extraordinary",
-        "type": "Rifle",
-        "collection": {
-            "name": "The Spectrum 2 Collection",
-            "image": "null"
-        },
-        "float": 0.06917449,
+        "float": 0.07346361,
         "stickers": [
             {
-                "name": "Master Guardian Elite",
-                "image": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/stickers/skillgroup_capsule/mge.6bd7c33a9839980d92db1148351abc0f7d25e571.png"
+                "name": "Neon Opal Strafe (Holo)"
             }
         ],
-        "pricing": {
-            "default": 150.2336,
-            "priceBeforeDiscount": 150.2336,
-            "extra": "null",
-            "discount": 0,
-            "computed": 142.72191999999998
-        },
-        "links": "steam://rungame/730/76561202255233023/+csgo_econ_action_preview%20S76561199216000601A27161447800D10277476446494699515"
+        "price": 319.03
     }
 ]
