@@ -1,124 +1,115 @@
 [
     {
-        "delivery": 5.71,
-        "name": "M4A1-S | Printstream",
-        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO1gb-Gw_alIITBhGJf_NZlmOzA-LP5gVO8v11lajzwIIbGcFNrNVjQqFS6lLu5gJW-vMudz3E2uiArsyyIy0Cx0kkZcKUx0mwdWFWI",
+        "delivery": 44.92,
+        "name": "M4A1-S | Bright Water",
+        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO-jb-ElPL1PYTThGpH5_p9g-7J4cKiiQ3g-UdoamDxIoeQcQM5ZFrW8wDowOnrgpW_6cmaziA27iV0tCqPgVXp1k7hrEcT",
         "isSouvenir": false,
         "isStatTrak": true,
         "quality": "mw",
-        "rarity": "Covert",
-        "float": 0.08666481822729111,
+        "rarity": "Restricted",
+        "float": 0.14257481694221497,
         "stickers": [
             {
-                "name": "Sticker | ropz (Holo) | Antwerp 2022"
+                "name": "Sticker | Virtus.Pro | Boston 2018"
             },
             {
-                "name": "Sticker | broky (Holo) | Antwerp 2022"
-            },
-            {
-                "name": "Sticker | Twistzz (Holo) | Antwerp 2022"
-            },
-            {
-                "name": "Sticker | rain (Holo) | Antwerp 2022"
+                "name": "Sticker | HellRaisers (Holo) | Atlanta 2017"
             }
         ],
-        "price": 465
+        "price": 70
     },
     {
-        "delivery": 6.41,
-        "name": "M4A1-S | Printstream",
-        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO1gb-Gw_alIITBhGJf_NZlmOzA-LP5gVO8v11lajzwIIbGcFNrNVjQqFS6lLu5gJW-vMudz3E2uiArsyyIy0Cx0kkZcKUx0mwdWFWI",
+        "delivery": 233.45,
+        "name": "M4A1-S | Bright Water",
+        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO-jb-ElPL1PYTThGpH5_p9g-7J4cKiiQ3g-UdoamDxIoeQcQM5ZFrW8wDowOnrgpW_6cmaziA27iV0tCqPgVXp1k7hrEcT",
         "isSouvenir": false,
         "isStatTrak": true,
         "quality": "mw",
-        "rarity": "Covert",
-        "float": 0.14809852838516235,
+        "rarity": "Restricted",
+        "float": 0.13986442983150482,
         "stickers": [
             {
-                "name": "Sticker | Liquid Fire (Holo)"
+                "name": "Sticker | SK Gaming (Holo) | Krakow 2017"
             },
             {
-                "name": "Sticker | Infinite Diamond (Holo)"
+                "name": "Sticker | boltz (Foil) | Cologne 2015"
             },
             {
-                "name": "Sticker | Battle Scarred (Holo)"
+                "name": "Sticker | Immortals (Holo) | Krakow 2017"
+            },
+            {
+                "name": "Sticker | Immortals (Holo) | Krakow 2017"
             }
         ],
-        "price": 466
+        "price": 92
     },
     {
-        "delivery": 226.81,
-        "name": "M4A1-S | Printstream",
-        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO1gb-Gw_alIITBhGJf_NZlmOzA-LP5gVO8v11lajzwIIbGcFNrNVjQqFS6lLu5gJW-vMudz3E2uiArsyyIy0Cx0kkZcKUx0mwdWFWI",
+        "delivery": 0.82,
+        "name": "M4A1-S | Bright Water",
+        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO-jb-ElPL1PYTThGpH5_p9g-7J4cKiiQ3g-UdoamDxIoeQcQM5ZFrW8wDowOnrgpW_6cmaziA27iV0tCqPgVXp1k7hrEcT",
         "isSouvenir": false,
         "isStatTrak": true,
         "quality": "mw",
-        "rarity": "Covert",
-        "float": 0.08305598050355911,
+        "rarity": "Restricted",
+        "float": 0.1496766060590744,
         "stickers": [
             {
-                "name": "Sticker | FaZe Clan (Glitter) | Paris 2023"
+                "name": "Sticker | Ninjas in Pyjamas | Katowice 2014"
             },
             {
-                "name": "Sticker | paiN Gaming (Glitter) | Paris 2023"
-            },
-            {
-                "name": "Sticker | Complexity Gaming (Glitter) | Paris 2023"
-            },
-            {
-                "name": "Sticker | Heroic (Glitter) | Paris 2023"
+                "name": "Sticker | Ninjas in Pyjamas (Holo) | Katowice 2015"
             }
         ],
-        "price": 555.55
+        "price": 115.99
     },
     {
-        "delivery": 74.84,
-        "name": "M4A1-S | Printstream",
-        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO1gb-Gw_alIITBhGJf_NZlmOzA-LP5gVO8v11lajzwIIbGcFNrNVjQqFS6lLu5gJW-vMudz3E2uiArsyyIy0Cx0kkZcKUx0mwdWFWI",
+        "delivery": 110.21,
+        "name": "M4A1-S | Bright Water",
+        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO-jb-ElPL1PYTThGpH5_p9g-7J4cKiiQ3g-UdoamDxIoeQcQM5ZFrW8wDowOnrgpW_6cmaziA27iV0tCqPgVXp1k7hrEcT",
         "isSouvenir": false,
         "isStatTrak": true,
         "quality": "mw",
-        "rarity": "Covert",
-        "float": 0.09717459231615067,
+        "rarity": "Restricted",
+        "float": 0.11674343049526201,
         "stickers": [
             {
-                "name": "Sticker | Cloud9 (Gold) | Antwerp 2022"
+                "name": "Sticker | Cloud9 (Holo) | Antwerp 2022"
             },
             {
-                "name": "Sticker | Cloud9 (Gold) | Antwerp 2022"
+                "name": "Sticker | Cloud9 (Holo) | Antwerp 2022"
             },
             {
-                "name": "Sticker | Cloud9 (Gold) | Antwerp 2022"
+                "name": "Sticker | Cloud9 (Holo) | Antwerp 2022"
             },
             {
-                "name": "Sticker | Cloud9 (Gold) | Antwerp 2022"
+                "name": "Sticker | Ax1Le (Holo) | Antwerp 2022"
             }
         ],
-        "price": 630.53
+        "price": 136.84
     },
     {
-        "delivery": "undefined",
-        "name": "M4A1-S | Printstream",
-        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO1gb-Gw_alIITBhGJf_NZlmOzA-LP5gVO8v11lajzwIIbGcFNrNVjQqFS6lLu5gJW-vMudz3E2uiArsyyIy0Cx0kkZcKUx0mwdWFWI",
+        "delivery": 0,
+        "name": "M4A1-S | Bright Water",
+        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO-jb-ElPL1PYTThGpH5_p9g-7J4cKiiQ3g-UdoamDxIoeQcQM5ZFrW8wDowOnrgpW_6cmaziA27iV0tCqPgVXp1k7hrEcT",
         "isSouvenir": false,
         "isStatTrak": true,
         "quality": "mw",
-        "rarity": "Covert",
-        "float": 0.08107537776231766,
+        "rarity": "Restricted",
+        "float": 0.11565615236759186,
         "stickers": [
             {
-                "name": "Sticker | rox (Holo) | Antwerp 2022"
+                "name": "Sticker | Eternal Fire (Holo) | Antwerp 2022"
             },
             {
-                "name": "Sticker | rox (Holo) | Antwerp 2022"
+                "name": "Sticker | Eternal Fire (Holo) | Antwerp 2022"
             },
             {
-                "name": "Sticker | rox (Holo) | Antwerp 2022"
+                "name": "Sticker | Eternal Fire (Holo) | Antwerp 2022"
             },
             {
-                "name": "Sticker | rox (Holo) | Antwerp 2022"
+                "name": "Sticker | Eternal Fire (Holo) | Antwerp 2022"
             }
         ],
-        "price": 1089.11
+        "price": 178.95
     }
 ]

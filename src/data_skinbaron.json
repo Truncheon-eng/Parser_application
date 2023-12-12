@@ -1,106 +1,97 @@
 [
     {
         "delivery": 0,
-        "name": "M4A1-S | Printstream",
-        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO1gb-Gw_alIITBhGJf_NZlmOzA-LP5gVO8vywwMiukcZice1M9ZViD-ATrle7v15O46cifzHFhunZ243yInxW-10sZOrBp1qTLVxzAUNxEoFAP",
+        "name": "M4A1-S | Bright Water",
+        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO-jb-ElPL1PYTThGpH5_p9g-7J4bP5iUazrl1rMmD3JoKRew88Z1nV-VS5xOzpjMfqvZrNznFg73Rx4i2IyxDh0E0ecKUx0mgVIkh6",
         "isSouvenir": false,
         "isStatTrak": false,
         "quality": "minimal-wear",
-        "rarity": "Extraordinary",
-        "float": 0.11886676400000001,
+        "rarity": "Restricted",
+        "float": 0.14277256,
         "stickers": [
             {
-                "name": "Kawaii Killer Terrorist"
+                "name": "Chicken Lover"
             },
             {
-                "name": " S1ren (Glitter) | Antwerp 2022"
+                "name": " Luck Skill"
             },
             {
-                "name": " S1ren (Glitter) | Antwerp 2022"
+                "name": " Rising Skull"
             },
             {
-                "name": " S1ren (Glitter) | Antwerp 2022"
+                "name": " Burn Them All"
             }
         ],
-        "price": 220.86
+        "price": 34.03
     },
     {
-        "delivery": 32,
-        "name": "M4A1-S | Printstream",
-        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO1gb-Gw_alIITBhGJf_NZlmOzA-LP5gVO8vywwMiukcZice1M9ZViD-ATrle7v15O46cifzHFhunZ243yInxW-10sZOrBp1qTLVxzAUNxEoFAP",
+        "delivery": 0,
+        "name": "M4A1-S | Bright Water",
+        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO-jb-ElPL1PYTThGpH5_p9g-7J4bP5iUazrl1rMmD3JoKRew88Z1nV-VS5xOzpjMfqvZrNznFg73Rx4i2IyxDh0E0ecKUx0mgVIkh6",
         "isSouvenir": false,
         "isStatTrak": false,
         "quality": "minimal-wear",
-        "rarity": "Extraordinary",
-        "float": 0.13221434,
+        "rarity": "Restricted",
+        "float": 0.11647238,
         "stickers": [
             {
-                "name": "Battle Scarred (Holo)"
+                "name": "Shooting Star Return"
             }
         ],
-        "price": 215.32
+        "price": 53.34
     },
     {
-        "delivery": 128,
-        "name": "M4A1-S | Printstream",
-        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO1gb-Gw_alIITBhGJf_NZlmOzA-LP5gVO8vywwMiukcZice1M9ZViD-ATrle7v15O46cifzHFhunZ243yInxW-10sZOrBp1qTLVxzAUNxEoFAP",
+        "delivery": 55,
+        "name": "M4A1-S | Bright Water",
+        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO-jb-ElPL1PYTThGpH5_p9g-7J4bP5iUazrl1rMmD3JoKRew88Z1nV-VS5xOzpjMfqvZrNznFg73Rx4i2IyxDh0E0ecKUx0mgVIkh6",
         "isSouvenir": false,
         "isStatTrak": false,
         "quality": "minimal-wear",
-        "rarity": "Extraordinary",
-        "float": 0.10438786,
+        "rarity": "Restricted",
+        "float": 0.114947274,
         "stickers": [
             {
-                "name": "Neon Opal Strafe (Holo)"
+                "name": "Fnatic | Cologne 2014"
             },
             {
-                "name": " Neon Opal Strafe (Holo)"
-            },
-            {
-                "name": " Neon Opal Strafe (Holo)"
+                "name": " Luck Skill"
             }
         ],
-        "price": 233.42
+        "price": 22.46
     },
     {
-        "delivery": 176,
-        "name": "M4A1-S | Printstream",
-        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO1gb-Gw_alIITBhGJf_NZlmOzA-LP5gVO8vywwMiukcZice1M9ZViD-ATrle7v15O46cifzHFhunZ243yInxW-10sZOrBp1qTLVxzAUNxEoFAP",
+        "delivery": 0,
+        "name": "M4A1-S | Bright Water",
+        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO-jb-ElPL1PYTThGpH5_p9g-7J4bP5iUazrl1rMmD3JoKRew88Z1nV-VS5xOzpjMfqvZrNznFg73Rx4i2IyxDh0E0ecKUx0mgVIkh6",
         "isSouvenir": false,
         "isStatTrak": false,
         "quality": "minimal-wear",
-        "rarity": "Extraordinary",
-        "float": 0.11956023399999999,
+        "rarity": "Restricted",
+        "float": 0.14847818,
         "stickers": [
             {
-                "name": "Battle Scarred (Holo)"
-            },
-            {
-                "name": " Battle Scarred (Holo)"
-            },
-            {
-                "name": " Battle Scarred (Holo)"
-            },
-            {
-                "name": " Battle Scarred (Holo)"
+                "name": "Fnatic | Katowice 2015"
             }
         ],
-        "price": 258.09
+        "price": 130.93
     },
     {
-        "delivery": 32,
-        "name": "M4A1-S | Printstream",
-        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO1gb-Gw_alIITBhGJf_NZlmOzA-LP5gVO8vywwMiukcZice1M9ZViD-ATrle7v15O46cifzHFhunZ243yInxW-10sZOrBp1qTLVxzAUNxEoFAP",
+        "delivery": 0,
+        "name": "M4A1-S | Bright Water",
+        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO-jb-ElPL1PYTThGpH5_p9g-7J4bP5iUazrl1rMmD3JoKRew88Z1nV-VS5xOzpjMfqvZrNznFg73Rx4i2IyxDh0E0ecKUx0mgVIkh6",
         "isSouvenir": false,
         "isStatTrak": false,
         "quality": "minimal-wear",
-        "rarity": "Extraordinary",
-        "float": 0.07346361,
+        "rarity": "Restricted",
+        "float": 0.13489303,
         "stickers": [
             {
-                "name": "Neon Opal Strafe (Holo)"
+                "name": "NBK- | Cologne 2015"
+            },
+            {
+                "name": " Luck Skill"
             }
         ],
-        "price": 319.03
+        "price": 74.68
     }
 ]

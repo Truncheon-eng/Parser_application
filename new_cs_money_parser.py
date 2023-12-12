@@ -19,7 +19,7 @@ def find_information(info): #info - информация об объекте
             item, item_asset = items[index_item], items[index_item].get("asset")
             response = {}
             if item.get("seller").get("delivery").get("medianTime") == None:
-                response["delivery"] = "undefined"
+                response["delivery"] = 0 #так как отсутствие говорит, о том что скин можно доставить мгновенно
             else:
                 response["delivery"] = item.get("seller").get("delivery").get("medianTime")
             response["name"] = item_asset.get("names").get("short")
