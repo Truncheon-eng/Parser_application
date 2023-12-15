@@ -112,6 +112,8 @@ def MainFunc():
         dictionary["hasNameTag"] = 'true'
     if value6 == 2:
         dictionary["hasNameTag"] = 'false'
+    if value6 == 3:
+        dictionary["hasNameTag"] = 'undefined'
     if value6 != 1 and value6 !=2:
         dictionary["hasNameTag"] = "undefined"
 
@@ -119,29 +121,35 @@ def MainFunc():
 
 
     value7 = stickers_var.get()
-    if value7 == 3:
-        dictionary["hasStickers"] = 'true'
     if value7 == 4:
+        dictionary["hasStickers"] = 'true'
+    if value7 == 5:
         dictionary["hasStickers"] = 'false'
-    if value7 != 3 and value7 != 4:
+    if value7 == 6:
+        dictionary["hasStickers"] = 'undefined'
+    if value7 != 4 and value7 != 5:   
         dictionary["hasStickers"] = "undefined"
         
 
     value8 = souvenir_var.get()
-    if value8 == 5:
+    if value8 == 7:
         dictionary["isSouvenir"] = 'true'
-    if value8 == 6:
+    if value8 == 8:
         dictionary["isSouvenir"] = 'false'
-    if value8 != 5 and value8 != 6:
-        dictionary["isSouvenir"] = "undefind"
+    if value8 == 9:
+        dictionary["isSouvenir"] = 'undefined'
+    if value8 != 7 and value8 != 8:
+        dictionary["isSouvenir"] = "undefined"
 
 
     value9 = StarTrack_var.get()
-    if value9 == 7:
+    if value9 == 10:
         dictionary["isStatTrak"] = 'true'
-    if value9 == 8:
+    if value9 == 11:
         dictionary["isStatTrak"] = 'false'
-    if value9 != 7 and value9 != 8:
+    if value9 == 12:
+        dictionary["isStatTrak"] = 'undefined'
+    if value9 != 10 and value9 != 11:
         dictionary["isStatTrak"] = "undefined"
 
 
@@ -293,54 +301,70 @@ tag_var = ctk.IntVar()
 ###Создание переключателей для тегов
 yestag = ctk.CTkRadioButton(app, text = 'Yes', variable = tag_var, value = 1)
 notag = ctk.CTkRadioButton(app, text = 'No', variable = tag_var, value = 2)
+nothingstickers = ctk.CTkRadioButton(app, text = 'No Matter', variable = tag_var, value = 3)
 ###Размещение переключателей для тегов
 yestag.place(x = 200, y = 150)
 notag.place(x = 265, y = 150)
+nothingstickers.place(x = 200, y = 180)
 
 #Текст Stickers
 label_Stickers = ctk.CTkLabel(app, text = 'Stickers:')
 label_Stickers.place(x = 400, y = 18)
 
+
 #Создание переключателей для стикеров
 stickers_var = ctk.IntVar()
 
 ###Создание переключателей для тегов
-yesstickers = ctk.CTkRadioButton(app, text = 'Yes', variable = stickers_var, value = 3)
-nostickers = ctk.CTkRadioButton(app, text = 'No', variable = stickers_var, value = 4)
+yesstickers = ctk.CTkRadioButton(app, text = 'Yes', variable = stickers_var, value = 4)
+nostickers = ctk.CTkRadioButton(app, text = 'No', variable = stickers_var, value = 5)
+nothingstickers = ctk.CTkRadioButton(app, text = 'No Matter', variable = stickers_var, value = 6)
+
 
 ###Размещение переключателей для тегов
 yesstickers.place(x = 400, y = 40)
 nostickers.place(x = 465, y = 40)
+nothingstickers.place(x = 400, y = 65)
+
+
 
 #Текст Souvenir
 label_Souvenir= ctk.CTkLabel(app, text = 'Souvenir:')
-label_Souvenir.place(x = 400, y = 67)
+label_Souvenir.place(x = 400, y = 86)
 
 #Создание переключателей для стикеров
 souvenir_var = ctk.IntVar()
 
-###Создание переключателей для тегов
-yessouvenir = ctk.CTkRadioButton(app, text = 'Yes', variable = souvenir_var, value = 5)
-nosouvenir = ctk.CTkRadioButton(app, text = 'No', variable = souvenir_var, value = 6)
+###Создание переключателей для сувенирности
+yessouvenir = ctk.CTkRadioButton(app, text = 'Yes', variable = souvenir_var, value = 7)
+nosouvenir = ctk.CTkRadioButton(app, text = 'No', variable = souvenir_var, value = 8)
+nothingsouvenirs = ctk.CTkRadioButton(app, text = 'No Matter', variable = souvenir_var, value = 9)
 
-###Размещение переключателей для тегов
-yessouvenir.place(x = 400, y = 95)
-nosouvenir.place(x = 465, y = 95)
+###Размещение переключателей для сувенирности
+yessouvenir.place(x = 400, y = 110)
+nosouvenir.place(x = 465, y = 110)
+nothingsouvenirs.place(x = 400, y = 135)
+
 
 #Текст StatTrak
 label_StarTrack= ctk.CTkLabel(app, text = 'StatTrak:')
-label_StarTrack.place(x = 400, y = 120)
+label_StarTrack.place(x = 400, y = 157)
 
 #Создание переключателей для стикеров
 StarTrack_var = ctk.IntVar()
 
 ###Создание переключателей для тегов
-yesStarTrack = ctk.CTkRadioButton(app, text = 'Yes', variable = StarTrack_var, value = 7)
-noStarTrack = ctk.CTkRadioButton(app, text = 'No', variable = StarTrack_var, value = 8)
+yesStarTrack = ctk.CTkRadioButton(app, text = 'Yes', variable = StarTrack_var, value = 10)
+noStarTrack = ctk.CTkRadioButton(app, text = 'No', variable = StarTrack_var, value = 11)
+nothingStarTrack = ctk.CTkRadioButton(app, text = 'No Matter', variable = StarTrack_var, value = 12)
+
 
 ###Размещение переключателей для тегов
-yesStarTrack.place(x = 400, y = 150)
-noStarTrack.place(x = 465, y = 150)
+yesStarTrack.place(x = 400, y = 180)
+noStarTrack.place(x = 465, y = 180)
+nothingStarTrack.place(x = 400, y = 205)
+
+
 
 #Текст Rarity
 label_Rarity = ctk.CTkLabel(app, text = 'Rarity:')
@@ -400,12 +424,11 @@ combobox_types.SelectedItem = 'По цене'
 combobox_kriteries.place(x = 550, y = 145)
 
 
-
-
 #Выпадающий список со сменой текущего оформления
 appearance_mode_option_menu = ctk.CTkOptionMenu(app,values = ["System", "Dark", "Light"], command = change_mode_menu, corner_radius = 30)
 appearance_mode_option_menu.grid(row = 3, column = 0, columnspan = 4)
 appearance_mode_option_menu.place(x = 550,y = 250)
+
 app.mainloop()
 
 
