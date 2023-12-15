@@ -6,21 +6,17 @@ import json
 app = ctk.CTk()
 app.geometry('720x500')
 app.title('TradeApp')
-
+ctk.set_appearance_mode('system')
 
 def MainFunc():
     dictionary = {}
 
- 
-        
-        
-
-        
+    
     value = entry_weapon.get()
     if value != '':
         dictionary["name"] = str(value)
     else:
-        dictionary["name"] = "undefind"
+        dictionary["name"] = "undefined"
 
 
 
@@ -73,7 +69,7 @@ def MainFunc():
     if value3 != types.get('Другое') and value3!= '':
         dictionary["type"] = int(value3)
     if value3 == '':
-        dictionary["type"] = "undefind"
+        dictionary["type"] = "undefined"
     if value3 == types.get('Другое'):
         dictionary["type"] = value3
         
@@ -85,7 +81,7 @@ def MainFunc():
     if value4 != '':
         dictionary["quality"] = str(value4)
     else:
-        dictionary["quality"] = "undefind"
+        dictionary["quality"] = "undefined"
 
 
 
@@ -117,7 +113,7 @@ def MainFunc():
     if value6 == 2:
         dictionary["hasNameTag"] = 'false'
     if value6 != 1 and value6 !=2:
-        dictionary["hasNameTag"] = "undefind"
+        dictionary["hasNameTag"] = "undefined"
 
 
 
@@ -128,7 +124,7 @@ def MainFunc():
     if value7 == 4:
         dictionary["hasStickers"] = 'false'
     if value7 != 3 and value7 != 4:
-        dictionary["hasStickers"] = "undefind"
+        dictionary["hasStickers"] = "undefined"
         
 
     value8 = souvenir_var.get()
@@ -146,14 +142,14 @@ def MainFunc():
     if value9 == 8:
         dictionary["isStatTrak"] = 'false'
     if value9 != 7 and value9 != 8:
-        dictionary["isStatTrak"] = "undefind"
+        dictionary["isStatTrak"] = "undefined"
 
 
 
     if combobox_rarities.get() != '':
         dictionary["rarity"] = str(combobox_rarities.get())
     else:
-        dictionary["rarity"] = "undefind"
+        dictionary["rarity"] = "undefined"
     
 
 
@@ -355,8 +351,6 @@ rarityarr = ['','Consumer Grade', 'Industrial Grade',
              'Mil-Spec Grade', 'Restricted',
              'Classified', 'Covert']
 
-#rarityarr_var = ctk.StringVar(value= rarityarr[0])
-#Выпадающий список с Rarity
 
 combobox_rarities = ctk.CTkComboBox(app, values = rarityarr)
 combobox_rarities.place(x = 550, y = 40)
@@ -402,13 +396,14 @@ kriteriy = {'По цене' : 1, 'По времени': 2}
 
 #Выпадающий список критериев:
 combobox_kriteries = ctk.CTkComboBox(app, values = tuple(kriteriy.keys()))
+combobox_types.SelectedItem = 'По цене'
 combobox_kriteries.place(x = 550, y = 145)
 
 
 
 
 #Выпадающий список со сменой текущего оформления
-appearance_mode_option_menu = ctk.CTkOptionMenu(app,values = ["Dark", "Light", "System"], command = change_mode_menu, corner_radius = 30)
+appearance_mode_option_menu = ctk.CTkOptionMenu(app,values = ["System", "Dark", "Light"], command = change_mode_menu, corner_radius = 30)
 appearance_mode_option_menu.grid(row = 3, column = 0, columnspan = 4)
 appearance_mode_option_menu.place(x = 550,y = 250)
 app.mainloop()
