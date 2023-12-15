@@ -11,7 +11,11 @@ app.title('TradeApp')
 def MainFunc():
     dictionary = {}
 
+ 
+        
+        
 
+        
     value = entry_weapon.get()
     if value != '':
         dictionary["name"] = str(value)
@@ -19,20 +23,50 @@ def MainFunc():
         dictionary["name"] = "undefind"
 
 
+
+
     value1 = entry_minprice.get()
-    if value1 != '' and value1.isdigit() == False:
-        dictionary["minPrice"] = float(value1)
+    if value1 != '':
+        if value1.isdigit():
+            dictionary["minPrice"] = float(value1)
+        else:
+            tk.messagebox.showinfo('Ошибка ввода', ('Поле ввода цены должно состоять из числовых значений'))
+            return 0
     else:
-        dictionary["minPrice"] = "undefind"
+        dictionary["minPrice"] = "undefined"
    
         
-        
 
+
+
+
+
+    
     value2 = entry_maxprice.get()
     if value2 != '':
-        dictionary["maxPrice"] = float(value2)
+        if value2.isdigit():
+            dictionary["maxPrice"] = float(value2)
+        else:
+            tk.messagebox.showinfo('Ошибка ввода', ('Поле ввода цены должно состоять из числовых значений'))
+            return 0
     else:
-        dictionary["maxPrice"] = "undefind"
+        dictionary["maxPrice"] = "undefined"
+
+
+
+
+
+
+
+    
+##    if value2 != '':
+##        dictionary["maxPrice"] = float(value2)
+##    else:
+##        dictionary["maxPrice"] = "undefind"
+
+
+
+
 
 
     value3 = types.get(combobox_types.get())
@@ -42,6 +76,7 @@ def MainFunc():
         dictionary["type"] = "undefind"
     if value3 == types.get('Другое'):
         dictionary["type"] = value3
+        
    
     
 
@@ -64,6 +99,17 @@ def MainFunc():
         dictionary["color"] = "undefind"
 
 
+  
+        
+
+
+
+
+
+
+
+
+
 
     value6 = tag_var.get()
     if value6 == 1:
@@ -78,11 +124,12 @@ def MainFunc():
 
     value7 = stickers_var.get()
     if value7 == 3:
-        dictionary["hasStickers"] = 'true'#bool(1)
+        dictionary["hasStickers"] = 'true'
     if value7 == 4:
         dictionary["hasStickers"] = 'false'
     if value7 != 3 and value7 != 4:
         dictionary["hasStickers"] = "undefind"
+        
 
     value8 = souvenir_var.get()
     if value8 == 5:
@@ -111,17 +158,51 @@ def MainFunc():
 
 
     value10 = entry_mingradient.get()
+##    if value10 != '':
+##        dictionary["minFade"] = float(value10)
+##    else:
+##        dictionary["minFade"] = "undefind"
+
+
+    
     if value10 != '':
-        dictionary["minFade"] = float(value10)
+            if value10.isdigit():
+                dictionary["minFade"] = float(value10)
+            else:
+                tk.messagebox.showinfo('Ошибка ввода', ('Поле ввода градиента должно состоять из числовых значений'))
+                return 0
     else:
-        dictionary["minFade"] = "undefind"
+        dictionary["minFade"] = "undefined"
+
+
+
+
+
+
+
+
+
 
 
     value11 = entry_maxgradient.get()
+##    if value11 != '':
+##        dictionary["maxFade"] = float(value11)
+##    else:
+##        dictionary["maxFade"] = "undefind"
     if value11 != '':
-        dictionary["maxFade"] = float(value11)
+            if value11.isdigit():
+                dictionary["maxFade"] = float(value11)
+            else:
+                tk.messagebox.showinfo('Ошибка ввода', ('Поле ввода градиента должно состоять из числовых значений'))
+                return 0
     else:
-        dictionary["maxFade"] = "undefind"
+        dictionary["maxFade"] = "undefined"
+
+
+
+
+
+
 
 
     value12 = kriteriy.get(combobox_kriteries.get())
@@ -183,7 +264,8 @@ types = { '':'',#'Ключи': 1,# 'Ножи': 2, 'Штурмовые Винто
           'Пистолеты-пулемёты':6, 'Дробовики':7, 'Пулемёты':8,
           'Перчатки':1} #"Другое":[10, 12, 14, 11, 9, 18, 19]}
 #Выпадающий список для типов предметов
-combobox_types = ctk.CTkComboBox(app, values = tuple(types.keys()))
+combobox_types = ctk.CTkComboBox(app, values = tuple(types.keys()), state = 'readonly')
+combobox_types.SelectedItem = ''
 combobox_types.place(x = 0, y = 145)
 #Текст качества предемтов
 label_Quality = ctk.CTkLabel(app, text = 'Quality:')
@@ -193,17 +275,19 @@ qualities = {'':'','FactoryNew': 'fn', 'MinimalWear':'mw',
               'FieldTested': 'ft',  'WellWorn': 'ww',
               'BattleScared': 'bs'}
 #Выпадающий список с качеством предметов
-combobox_qualities = ctk.CTkComboBox(app, values = tuple(qualities.keys()))
+combobox_qualities = ctk.CTkComboBox(app, values = tuple(qualities.keys()), state = 'readonly')
+combobox_qualities.SelectedItem = ''
 combobox_qualities.place(x = 200, y = 40)
 #Текст цвета предмета
 label_Color = ctk.CTkLabel(app, text = 'Color:')
 label_Color.place(x = 200, y = 67)
 #Словарь с цветами предметов
-colours = {'':'', 'Orange': 1, 'Blue': 2,
+colours = {'':'','Orange': 1, 'Blue': 2,
            'Yellow': 3, 'Green': 4, 'Purple':5,
            'Grey': 6, 'Brown': 7}
 #Выпадающий список для цветов
-combobox_colours = ctk.CTkComboBox(app, values = tuple(colours.keys()))
+combobox_colours = ctk.CTkComboBox(app, values = tuple(colours.keys()), state = 'readonly')
+combobox_colours.SelectedItem = ''
 combobox_colours.place(x = 200, y = 90)
 #Текст NameTag
 label_NameTag = ctk.CTkLabel(app, text = 'NameTag:')
