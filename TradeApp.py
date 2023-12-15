@@ -3,10 +3,14 @@ from customtkinter import *
 import tkinter as tk
 from tkinter import *
 import json
+import requests
 app = ctk.CTk()
 app.geometry('720x500')
 app.title('TradeApp')
 ctk.set_appearance_mode('system')
+
+
+headers = {'Content-type': 'application/json', 'Accept': 'application/json'}
 
 def MainFunc():
     dictionary = {}
@@ -210,10 +214,14 @@ def MainFunc():
         
         
     x = json.dumps(dictionary)
-    y = json.loads(x)
-    print(y)
+    r = requests.post("http://localhost:5000", data=x, headers=headers)
+    print(r.json())
+    if r.status_code == 200:
+        return r.json()
+    else:
+        return [{"error": "Something with server"}]
+    return r
     
-    return y
 
 
      
