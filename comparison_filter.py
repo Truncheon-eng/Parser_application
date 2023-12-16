@@ -11,13 +11,16 @@ def filter_(data_1, data_2, key_): #TODO: переименовать filter_ в 
     else:
         return [data_2[0]] + filter_(data_2[1:], data_1, key_)
 def comparision(dictionary_info):
-    print("comparison function")
     data = list() # TODO: понять, почему переменная не используется
     array_filters = ["price", "delivery"]
     sth_filter = array_filters[dictionary_info["params"] - 1]# params = 1 или params = 2
     del dictionary_info["params"]
     data_cs_money = find_cs_money(dictionary_info.copy())
     data_skinbaron = find_skinbaron(dictionary_info.copy())
+    print("DATA_CS_MONEY")
+    print(data_cs_money)
+    print("DATA_SKINBARON")
+    print(data_skinbaron)
     if data_cs_money[0] == {"errors": "No information with this request"}: #TODO: data_cs_money[0].get("errors") is None
         data = data_skinbaron
         print("No info cs.money")

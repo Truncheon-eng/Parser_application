@@ -1,7 +1,6 @@
 import requests
 maxItems = 5
 def find_information(info):
-    print("cs_money_parser begin")
     link = "https://cs.money/1.0/market/sell-orders?limit=60"
     # так как я удаляю некоторые параметры, то в info эти парметры уже не содержатся,
     # тогда в info будут содержаться все необходимые для удаления ключи и их значения
@@ -11,7 +10,6 @@ def find_information(info):
             del info[element]
     info["order"] = "asc"
     req = requests.get(link, params=info) # TODO: посмотреть на код, который мне пришёл
-    print(req.url) #TODO: УБРАТЬ ЕГО
     # возвращает мне массив, состоящий из необходимых элементов
     content = req.json()
     # Обработка ошибки
@@ -24,6 +22,7 @@ def find_information(info):
                 items = items[0:maxItems]
             # if len(items) > 5:
             #     items = items[0:5]
+            #TODO: проверять каждый параметр, является ли он None
             for index_item in range(len(items)):
                 item, item_asset = items[index_item], items[index_item].get("asset")
                 response = {}

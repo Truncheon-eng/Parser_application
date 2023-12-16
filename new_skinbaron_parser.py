@@ -58,7 +58,6 @@ def unstandart(info):
 
 
 def find_information(info):
-    print("skinbaron_parser begin")
     unstandart(info)
     for element in list(info.keys()):
         if info[element] == "undefined":
@@ -66,7 +65,6 @@ def find_information(info):
     # CF - позволяет отсортировать список по возрастанию цены
     link = "https://skinbaron.de/api/v2/Browsing/FilterOffers?appId=730&sort=CF&language=eng"
     response = requests.get(link, params=info).json() # TODO: сделать проверку на работу сервера requests.get(link, params=info) == 200
-    print(requests.get(link, params=info).url)
     if len(response.get("aggregatedMetaOffers")) == 0:
         return [{"errors": "No information with this request"}] # TODO: вынести undefined, ошибки в отдельную переменную
     else:
