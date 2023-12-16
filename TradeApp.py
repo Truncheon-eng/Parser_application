@@ -13,6 +13,7 @@ ctk.set_appearance_mode('system')
 headers = {'Content-type': 'application/json', 'Accept': 'application/json'}
 
 
+
 def MainFunc():
     dictionary = {}
     value = entry_weapon.get()
