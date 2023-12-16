@@ -2,7 +2,7 @@ import requests
 # добавление библиотеки, отслеживающий курсы валют
 from forex_python.converter import CurrencyRates
 currency = CurrencyRates()
-
+maxItems = 5
 
 def replace_values(list_, param_stand, dict_, param_unstand, offset, k):
     for index_elem in range(len(list_)):
@@ -14,6 +14,7 @@ def replace_values(list_, param_stand, dict_, param_unstand, offset, k):
 
 
 def unstandart(info):
+    #TODO: убрать огромное кол-во if-ов
     if info["type"] == 2:
         info.pop("type")
         info["v"] = 2828
@@ -34,7 +35,7 @@ def unstandart(info):
         info["v"] = 2908
     unstandart_list, standart_list = (["str", "sticker", "souvenir", "statTrak"],
                                       ["name", "hasStickers", "isSouvenir", "isStatTrak"])
-    for st_list_index in range(3):
+    for st_list_index in range(len(unstandart_list)):
         if info[standart_list[st_list_index]] != "undefined":
             info[unstandart_list[st_list_index]] = info.pop(standart_list[st_list_index])
     if info["minPrice"] != "undefined":
@@ -49,28 +50,30 @@ def unstandart(info):
     if info["rarity"] != "undefined":
         rarity_list = ["Consumer Grade", "Industrial Grade", "Mil-Spec Grade", "Restricted", "Classified", "Covert"]
         replace_values(rarity_list, "rarity", info, "qf", 2, 2)
-    info["maxFade"] = "undefined"
-    info["minFade"] = "undefined"
-    info["color"] = "undefined"
-    info["hasNameTag"] = "undefined"
+    # info["maxFade"] = "undefined"
+    # info["minFade"] = "undefined"
+    # info["color"] = "undefined"
+    # info["hasNameTag"] = "undefined"
     info["language"] = "en"
 
 
 def find_information(info):
+    print("skinbaron_parser begin")
     unstandart(info)
     for element in list(info.keys()):
         if info[element] == "undefined":
             del info[element]
     # CF - позволяет отсортировать список по возрастанию цены
     link = "https://skinbaron.de/api/v2/Browsing/FilterOffers?appId=730&sort=CF&language=eng"
-    response = requests.get(link, params=info).json()
+    response = requests.get(link, params=info).json() # TODO: сделать проверку на работу сервера requests.get(link, params=info) == 200
+    print(requests.get(link, params=info).url)
     if len(response.get("aggregatedMetaOffers")) == 0:
-        return [{"errors": "No information with this request"}]
+        return [{"errors": "No information with this request"}] # TODO: вынести undefined, ошибки в отдельную переменную
     else:
-        try:
+        try: # может убрать вместе с catch
             list_of_skins = response.get("aggregatedMetaOffers")
-            if len(list_of_skins) > 5:
-                list_of_skins = list_of_skins[0:5]
+            if maxItems > 0:
+                list_of_skins = list_of_skins[0:maxItems]
             list_of_response = []  # список, состоящий из найденных объектов
             for item_in_list in range(len(list_of_skins)):
                 item_response = {}
@@ -99,7 +102,8 @@ def find_information(info):
                         item_response["stickers"].append({"name": item.get("singleOffer").get("stickers")[index_sticker].
                                                          get("localizedName")})
                 item_response["price"] = round(currency.get_rates("EUR")["USD"]*item.get("singleOffer").get("itemPrice"), 2)
+                item_response["marketPlace"] = "SKINBARON"
                 list_of_response.append(item_response)
             return list_of_response
-        except KeyError:
+        except Exception:
             return [{"errors": "No information about keys"}]
