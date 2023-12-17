@@ -137,7 +137,7 @@ def MainFunc():
 
     x = json.dumps(dictionary)
     r = requests.post("http://localhost:5000", data=x, headers=headers)
-    # print(r.json())
+    print(r.json())
 
     if r.json() == [{'errors': 'No information with this request'}]:
         tk.messagebox.showinfo('', ('Ничего не найдено'))
@@ -195,6 +195,8 @@ def MainFunc():
     if len(r.json()) > 0:
         labelNumber = ctk.CTkLabel(new_window, text='Item 1', text_color='black', font=('Bold', 18))
         labelNumber.place(x=0, y=0)
+        marketlabel1 = ctk.CTkLabel(new_window, text=str(first['marketPlace']), text_color='black', font=('Bold', 15))
+        marketlabel1.place(x = 40, y = 0)
         labelNaiming = ctk.CTkLabel(new_window, text='Name:', text_color='black', font=('Bold', 15))
         labelNaiming.place(x=0, y=20)
         textnaiming = ctk.CTkLabel(new_window, text=str(first['name']), text_color='black', font=('Bold', 15))
@@ -231,6 +233,8 @@ def MainFunc():
         if len(r.json()) > 1:
             labelNumber2 = ctk.CTkLabel(new_window, text='Item 2', text_color='black', font=('Bold', 18))
             labelNumber2.place(x=0, y=190)
+            marketlabel2 = ctk.CTkLabel(new_window, text=str(second['marketPlace']), text_color='black', font=('Bold', 15))
+            marketlabel2.place(x = 40, y = 190)
             labelNaiming2 = ctk.CTkLabel(new_window, text='Name:', text_color='black', font=('Bold', 15))
             labelNaiming2.place(x=0, y=210)
             textnaiming2 = ctk.CTkLabel(new_window, text=str(second['name']), text_color='black', font=('Bold', 15))
@@ -270,6 +274,8 @@ def MainFunc():
             if len(r.json()) > 2:
                 labelNumber3 = ctk.CTkLabel(new_window, text='Item 3', text_color='black', font=('Bold', 18))
                 labelNumber3.place(x=0, y=380)
+                marketlabel3 = ctk.CTkLabel(new_window, text=str(third['marketPlace']), text_color='black', font=('Bold', 15))
+                marketlabel3.place(x = 40, y = 380)
                 labelNaiming3 = ctk.CTkLabel(new_window, text='Name:', text_color='black', font=('Bold', 15))
                 labelNaiming3.place(x=0, y=400)
                 textnaiming3 = ctk.CTkLabel(new_window, text=str(third['name']), text_color='black', font=('Bold', 15))
@@ -309,6 +315,8 @@ def MainFunc():
                 if len(r.json()) > 3:
                     labelNumber4 = ctk.CTkLabel(new_window, text='Item 4', text_color='black', font=('Bold', 18))
                     labelNumber4.place(x=0, y=570)
+                    marketlabel4 = ctk.CTkLabel(new_window, text=str(fourth['marketPlace']), text_color='black', font=('Bold', 15))
+                    marketlabel4.place(x = 40, y = 570)
                     labelNaiming4 = ctk.CTkLabel(new_window, text='Name:', text_color='black', font=('Bold', 15))
                     labelNaiming4.place(x=0, y=590)
                     textnaiming4 = ctk.CTkLabel(new_window, text=str(fourth['name']), text_color='black',
@@ -352,6 +360,8 @@ def MainFunc():
                     if len(r.json()) > 4:
                         labelNumber5 = ctk.CTkLabel(new_window, text='Item 5', text_color='black', font=('Bold', 18))
                         labelNumber5.place(x=300, y=0)
+                        marketlabel5 = ctk.CTkLabel(new_window, text=str(fifth['marketPlace']), text_color='black', font=('Bold', 15))
+                        marketlabel5.place(x = 340, y = 0)
                         labelNaiming5 = ctk.CTkLabel(new_window, text='Name:', text_color='black', font=('Bold', 15))
                         labelNaiming5.place(x=300, y=20)
                         textnaiming5 = ctk.CTkLabel(new_window, text=str(fifth['name']), text_color='black',
