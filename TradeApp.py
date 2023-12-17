@@ -23,15 +23,6 @@ def MainFunc():
         dictionary["name"] = "undefined"
 
     value1 = entry_minprice.get()
-    ##    if value1 != '':
-    ##        if value1.isdigit():
-    ##            dictionary["minPrice"] = float(value1)
-    ##        else:
-    ##            tk.messagebox.showinfo('Ошибка ввода', ('Поле ввода цены должно состоять из числовых значений'))
-    ##            return 0
-    ##    else:
-    ##        dictionary["minPrice"] = "undefined"
-
     allowed_symbols = set("1234567890.")
     if value1 == '':
         dictionary["minPrice"] = "undefined"
@@ -41,6 +32,7 @@ def MainFunc():
             return 0
         else:
             dictionary["minPrice"] = float(value1)
+                
 
     value2 = entry_maxprice.get()
     if value2 == '':
@@ -51,15 +43,6 @@ def MainFunc():
             return 0
         else:
             dictionary["maxPrice"] = float(value2)
-
-    ##    if value2 != '':
-    ##        if value2.isdigit():
-    ##            dictionary["maxPrice"] = float(value2)
-    ##        else:
-    ##            tk.messagebox.showinfo('Ошибка ввода', ('Поле ввода цены должно состоять из числовых значений'))
-    ##            return 0
-    ##    else:
-    ##        dictionary["maxPrice"] = "undefined"
 
     value3 = types.get(combobox_types.get())
     if value3 != types.get('Другое') and value3 != '':
@@ -160,7 +143,6 @@ def MainFunc():
         tk.messagebox.showinfo('', ('Ничего не найдено'))
         return 0
     else:
-
         stickers11 = []
         if len(r.json()) > 0:
             first = r.json()[0]
@@ -423,6 +405,9 @@ def MainFunc():
         return [{"errors": "Something with server"}]
 
 
+
+
+
 # Функция, срабатывающая при нажати на кнопку Steam Item Search
 def steamfunc():
     formdict = {}
@@ -468,8 +453,10 @@ def clear():
 
 
 # Функция, срабатывающая при смене оформления
+#########Заимствованная функция
 def change_mode_menu(new_appearance_mode):
     ctk.set_appearance_mode(new_appearance_mode)
+#########Конец заимствованной функции#############
 
 
 # Название Приложения
@@ -503,7 +490,7 @@ label_type.place(x=0, y=120)
 types = {'': '', 'Ножи': 2, 'Штурмовые Винтовки': 3,
          'Снайперские винтовки': 4, 'Пистолеты': 5,
          'Пистолеты-пулемёты': 6, 'Дробовики': 7, 'Пулемёты': 8,
-         'Перчатки': 1}
+         'Перчатки': 13}
 # Выпадающий список для типов предметов
 combobox_types = ctk.CTkComboBox(app, values=tuple(types.keys()), state='readonly')
 combobox_types.SelectedItem = ''
@@ -511,7 +498,7 @@ combobox_types.place(x=0, y=145)
 # Текст качества предемтов
 label_Quality = ctk.CTkLabel(app, text='Quality:')
 label_Quality.place(x=200, y=18)
-# Словарь для качества предметов
+# Словарь для качества предметов 
 qualities = {'': '', 'FactoryNew': 'fn', 'MinimalWear': 'mw',
              'FieldTested': 'ft', 'WellWorn': 'ww',
              'BattleScared': 'bs'}
@@ -648,11 +635,17 @@ combobox_kriteries = ctk.CTkComboBox(app, values=tuple(kriteriy.keys()))
 combobox_types.SelectedItem = 'По цене'
 combobox_kriteries.place(x=550, y=145)
 
+
+########Заимствованная часть кода#########
 # Выпадающий список со сменой текущего оформления
 appearance_mode_option_menu = ctk.CTkOptionMenu(app, values=["System", "Dark", "Light"], command=change_mode_menu,
                                                 corner_radius=30)
 appearance_mode_option_menu.grid(row=3, column=0, columnspan=4)
 appearance_mode_option_menu.place(x=550, y=250)
+########Конец заимствованной части кода#########
+
+
+
 
 # Кнопка Steam Items Search
 steam_button = ctk.CTkButton(app, text='Steam Items Search', command=steamfunc, corner_radius=30)
