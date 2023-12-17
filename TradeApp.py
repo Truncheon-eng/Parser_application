@@ -495,7 +495,6 @@ def change_mode_menu(new_appearance_mode):
     ctk.set_appearance_mode(new_appearance_mode)
 #########Конец заимствованной функции#############
 
-
 # Название Приложения
 label_naiming = ctk.CTkLabel(app, text='TradeApp')
 label_naiming.place(x=340, y=0)
