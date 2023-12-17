@@ -104,6 +104,8 @@ def MainFunc():
     if value9 != 10 and value9 != 11:
         dictionary["isStatTrak"] = "undefined"
 
+
+
     if combobox_rarities.get() != '':
         dictionary["rarity"] = str(combobox_rarities.get())
     else:
@@ -445,10 +447,10 @@ def steamfunc():
     balance_label.place(x=0, y=0)
     balance_entry = ctk.CTkEntry(steam_window, width=70, height=10, corner_radius=5)
     balance_entry.place(x=132, y=2)
-
+    
     # Функция, срабатывающая при нажатии на кнопку search в окне Steam Search
     def sendform():
-        balance = balance_entry.get()
+        balance = balance_entry.get()           
         if balance != '':
             if balance.isdigit():
                 formdict["value"] = float(balance)
@@ -464,6 +466,9 @@ def steamfunc():
 
     steam_searchbtn = ctk.CTkButton(steam_window, text='Search', command=sendform, corner_radius=30)
     steam_searchbtn.place(x=0, y=40)
+
+
+
 
 
 # Функция, которая срабатывает при нажатии на кнопку Clean Values
@@ -484,7 +489,7 @@ def clear():
 
 
 # Функция, срабатывающая при смене оформления
-#########Заимствованная функция
+#########Заимствованная функция###################
 def change_mode_menu(new_appearance_mode):
     ctk.set_appearance_mode(new_appearance_mode)
 #########Конец заимствованной функции#############
