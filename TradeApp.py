@@ -109,25 +109,40 @@ def MainFunc():
     else:
         dictionary["rarity"] = "undefined"
 
+
+    
     value10 = entry_mingradient.get()
-    if value10 != '':
-        if value10.isdigit():
-            dictionary["minFade"] = float(value10)
-        else:
-            tk.messagebox.showinfo('Ошибка ввода', ('Поле ввода градиента должно состоять из числовых значений'))
+    if value10 == '':
+        dictionary["minFade"] = 'undefined'
+    elif value10.isdigit():
+        if int(value10) < 78 or int(value10) > 100:
+            tk.messagebox.showinfo('Ошибка ввода', ('Значение градиента должно быть от 78 до 100'))
             return 0
+        else:
+            dictionary["minFade"]  = float(value10)
     else:
-        dictionary["minFade"] = "undefined"
+        tk.messagebox.showinfo('Ошибка ввода', ('Вводите числовые значения градиента'))
+        return 0
+        
+ 
 
     value11 = entry_maxgradient.get()
-    if value11 != '':
-        if value11.isdigit():
-            dictionary["maxFade"] = float(value11)
-        else:
-            tk.messagebox.showinfo('Ошибка ввода', ('Поле ввода градиента должно состоять из числовых значений'))
+    if value11 == '':
+        dictionary["maxFade"] = 'undefined'
+    elif value11.isdigit():
+        if int(value11) < 78 or int(value11) > 100:
+            tk.messagebox.showinfo('Ошибка ввода', ('Значение градиента должно быть от 78 до 100'))
             return 0
+        else:
+            dictionary["maxFade"]  = float(value11)
     else:
-        dictionary["maxFade"] = "undefined"
+        tk.messagebox.showinfo('Ошибка ввода', ('Вводите числовые значения градиента'))
+        return 0
+
+
+
+
+
 
     value12 = kriteriy.get(combobox_kriteries.get())
     if value12 == kriteriy.get(1):
@@ -138,6 +153,8 @@ def MainFunc():
     x = json.dumps(dictionary)
     r = requests.post("http://localhost:5000", data=x, headers=headers)
     print(r.json())
+
+    
 
     if r.json() == [{'errors': 'No information with this request'}]:
         tk.messagebox.showinfo('', ('Ничего не найдено'))
@@ -196,7 +213,7 @@ def MainFunc():
         labelNumber = ctk.CTkLabel(new_window, text='Item 1', text_color='black', font=('Bold', 18))
         labelNumber.place(x=0, y=0)
         marketlabel1 = ctk.CTkLabel(new_window, text=str(first['marketPlace']), text_color='black', font=('Bold', 15))
-        marketlabel1.place(x = 40, y = 0)
+        marketlabel1.place(x = 50, y = 0)
         labelNaiming = ctk.CTkLabel(new_window, text='Name:', text_color='black', font=('Bold', 15))
         labelNaiming.place(x=0, y=20)
         textnaiming = ctk.CTkLabel(new_window, text=str(first['name']), text_color='black', font=('Bold', 15))
@@ -234,7 +251,7 @@ def MainFunc():
             labelNumber2 = ctk.CTkLabel(new_window, text='Item 2', text_color='black', font=('Bold', 18))
             labelNumber2.place(x=0, y=190)
             marketlabel2 = ctk.CTkLabel(new_window, text=str(second['marketPlace']), text_color='black', font=('Bold', 15))
-            marketlabel2.place(x = 40, y = 190)
+            marketlabel2.place(x = 50, y = 190)
             labelNaiming2 = ctk.CTkLabel(new_window, text='Name:', text_color='black', font=('Bold', 15))
             labelNaiming2.place(x=0, y=210)
             textnaiming2 = ctk.CTkLabel(new_window, text=str(second['name']), text_color='black', font=('Bold', 15))
@@ -275,7 +292,7 @@ def MainFunc():
                 labelNumber3 = ctk.CTkLabel(new_window, text='Item 3', text_color='black', font=('Bold', 18))
                 labelNumber3.place(x=0, y=380)
                 marketlabel3 = ctk.CTkLabel(new_window, text=str(third['marketPlace']), text_color='black', font=('Bold', 15))
-                marketlabel3.place(x = 40, y = 380)
+                marketlabel3.place(x = 50, y = 380)
                 labelNaiming3 = ctk.CTkLabel(new_window, text='Name:', text_color='black', font=('Bold', 15))
                 labelNaiming3.place(x=0, y=400)
                 textnaiming3 = ctk.CTkLabel(new_window, text=str(third['name']), text_color='black', font=('Bold', 15))
@@ -316,7 +333,7 @@ def MainFunc():
                     labelNumber4 = ctk.CTkLabel(new_window, text='Item 4', text_color='black', font=('Bold', 18))
                     labelNumber4.place(x=0, y=570)
                     marketlabel4 = ctk.CTkLabel(new_window, text=str(fourth['marketPlace']), text_color='black', font=('Bold', 15))
-                    marketlabel4.place(x = 40, y = 570)
+                    marketlabel4.place(x = 50, y = 570)
                     labelNaiming4 = ctk.CTkLabel(new_window, text='Name:', text_color='black', font=('Bold', 15))
                     labelNaiming4.place(x=0, y=590)
                     textnaiming4 = ctk.CTkLabel(new_window, text=str(fourth['name']), text_color='black',
@@ -361,7 +378,7 @@ def MainFunc():
                         labelNumber5 = ctk.CTkLabel(new_window, text='Item 5', text_color='black', font=('Bold', 18))
                         labelNumber5.place(x=300, y=0)
                         marketlabel5 = ctk.CTkLabel(new_window, text=str(fifth['marketPlace']), text_color='black', font=('Bold', 15))
-                        marketlabel5.place(x = 340, y = 0)
+                        marketlabel5.place(x = 350, y = 0)
                         labelNaiming5 = ctk.CTkLabel(new_window, text='Name:', text_color='black', font=('Bold', 15))
                         labelNaiming5.place(x=300, y=20)
                         textnaiming5 = ctk.CTkLabel(new_window, text=str(fifth['name']), text_color='black',
@@ -460,6 +477,10 @@ def clear():
     combobox_colours.set('')
     combobox_qualities.set('')
     combobox_rarities.set('')
+    tag_var.set(0)
+    stickers_var.set(0)
+    souvenir_var.set(0)
+    StarTrack_var.set(0)
 
 
 # Функция, срабатывающая при смене оформления
@@ -503,7 +524,7 @@ types = {'': '', 'Ножи': 2, 'Штурмовые Винтовки': 3,
          'Перчатки': 13}
 # Выпадающий список для типов предметов
 combobox_types = ctk.CTkComboBox(app, values=tuple(types.keys()), state='readonly')
-combobox_types.SelectedItem = ''
+#combobox_types.SelectedItem = ''
 combobox_types.place(x=0, y=145)
 # Текст качества предемтов
 label_Quality = ctk.CTkLabel(app, text='Quality:')
@@ -514,7 +535,7 @@ qualities = {'': '', 'FactoryNew': 'fn', 'MinimalWear': 'mw',
              'BattleScared': 'bs'}
 # Выпадающий список с качеством предметов
 combobox_qualities = ctk.CTkComboBox(app, values=tuple(qualities.keys()), state='readonly')
-combobox_qualities.SelectedItem = ''
+#combobox_qualities.SelectedItem = ''
 combobox_qualities.place(x=200, y=40)
 # Текст цвета предмета
 label_Color = ctk.CTkLabel(app, text='Color:')
@@ -525,7 +546,7 @@ colours = {'': '', 'Orange': 1, 'Blue': 2,
            'Grey': 6, 'Brown': 7}
 # Выпадающий список для цветов
 combobox_colours = ctk.CTkComboBox(app, values=tuple(colours.keys()), state='readonly')
-combobox_colours.SelectedItem = ''
+#combobox_colours.SelectedItem = ''
 combobox_colours.place(x=200, y=90)
 # Текст NameTag
 label_NameTag = ctk.CTkLabel(app, text='NameTag:')
@@ -641,8 +662,8 @@ label_Filtres.place(x=550, y=120)
 kriteriy = {'По цене': 1, 'По времени': 2}
 
 # Выпадающий список критериев:
-combobox_kriteries = ctk.CTkComboBox(app, values=tuple(kriteriy.keys()))
-combobox_types.SelectedItem = 'По цене'
+combobox_kriteries = ctk.CTkComboBox(app, values=tuple(kriteriy.keys()), state = 'readonly')
+combobox_kriteries.set('По цене')
 combobox_kriteries.place(x=550, y=145)
 
 
