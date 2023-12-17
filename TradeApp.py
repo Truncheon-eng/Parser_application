@@ -5,6 +5,7 @@ from tkinter import *
 import json
 import requests
 
+
 app = ctk.CTk()
 app.geometry('720x500')
 app.title('TradeApp')
