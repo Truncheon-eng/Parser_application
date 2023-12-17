@@ -41,9 +41,11 @@ def output_cs_money(value):
         return [{"errors": "There's nothing here"}, 0]
 def output_skinbaron_parser(value):
     link = "https://skinbaron.de/api/v2/Browsing/FilterOffers?appId=730&sort=CF&language=eng"
-    info = {"plb": round(currency.get_rates("USD")["EUR"] * value * 0.9, 2), "pub": round(currency.get_rates("USD")["EUR"] * value, 2)}
+    value = round(currency.get_rates("USD")["EUR"]*value, 2)
+    info = {"plb": 0.9*value, "pub": value}
     try:
         req = requests.get(link, params=info)
+        print(req.url)
         response_items = req.json()["aggregatedMetaOffers"]
         list_of_items = list()
         sums_of_items = 0
@@ -69,15 +71,17 @@ def output_skinbaron_parser(value):
         return [{"errors": "There's nothing here"}, 0]
 def final_output(money):
     cs_money = output_cs_money(money)
+    print("cs_money: ", cs_money[1])
     skinbaron = output_skinbaron_parser(money)
+    print("skinbaron: ", skinbaron[1])
     if cs_money[1] > skinbaron[1]:
         response = cs_money[0]
-        response.append({"sumsOfItems": round(cs_money[1], 2)})
+        response.append({"sumsOfItems": cs_money[1]})
         response.append({"marketPlace": "CS-MONEY"})
         return response
     else:
         response = skinbaron[0]
-        response.append({"sumsOfItems": round(skinbaron[1], 2)})
+        response.append({"sumsOfItems": skinbaron[1]})
         response.append({"marketPlace": "SKINBARON"})
         return response
 

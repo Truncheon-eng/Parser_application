@@ -22,7 +22,6 @@ def find_information(info):
                 items = content.get("items")
                 if maxItems > 0:
                     items = items[0:maxItems]
-                #TODO: проверять каждый параметр, является ли он None
                 for index_item in range(len(items)):
                     item, item_asset = items[index_item], items[index_item].get("asset")
                     response = {}
