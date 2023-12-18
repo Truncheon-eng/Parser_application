@@ -18,7 +18,6 @@ def find_information(info):
         if info[element] == undefined:
             del info[element]
     req = requests.get(link, params=info)
-    print(req.url)
     # возвращает мне массив, состоящий из необходимых элементов
     if req.status_code == 200:
         content = req.json()

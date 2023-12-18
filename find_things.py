@@ -59,7 +59,6 @@ def output_skinbaron_parser(value):
     info = {"plb": round(0.9*value, 2), "pub": value}
     try:
         req = requests.get(link, params=info)
-        print(req.url)
         response_items = req.json()["aggregatedMetaOffers"]
         list_of_items = list()
         sums_of_items = 0

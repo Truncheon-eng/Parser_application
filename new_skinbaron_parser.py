@@ -60,7 +60,6 @@ def find_information(info):
     # проверка статуса присылаемых данных
     if requests.get(link, params=info).status_code == 200:
         response = requests.get(link, params=info).json()
-        print(requests.get(link, params=info).url)
         if len(response.get("aggregatedMetaOffers")) == 0:
             return [errors[0]]
         else:
