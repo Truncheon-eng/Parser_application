@@ -4,7 +4,7 @@ import tkinter as tk
 from tkinter import *
 import json
 import requests
-
+from customtkinter import CTkLabel
 
 app = ctk.CTk()
 app.geometry('720x500')
@@ -12,7 +12,6 @@ app.title('TradeApp')
 ctk.set_appearance_mode('system')
 
 headers = {'Content-type': 'application/json', 'Accept': 'application/json'}
-
 
 
 def MainFunc():
@@ -33,7 +32,6 @@ def MainFunc():
             return 0
         else:
             dictionary["minPrice"] = float(value1)
-                
 
     value2 = entry_maxprice.get()
     if value2 == '':
@@ -105,15 +103,11 @@ def MainFunc():
     if value9 != 10 and value9 != 11:
         dictionary["isStatTrak"] = "undefined"
 
-
-
     if combobox_rarities.get() != '':
         dictionary["rarity"] = str(combobox_rarities.get())
     else:
         dictionary["rarity"] = "undefined"
 
-
-    
     value10 = entry_mingradient.get()
     if value10 == '':
         dictionary["minFade"] = 'undefined'
@@ -122,12 +116,10 @@ def MainFunc():
             tk.messagebox.showinfo('Ошибка ввода', ('Значение градиента должно быть от 78 до 100'))
             return 0
         else:
-            dictionary["minFade"]  = float(value10)
+            dictionary["minFade"] = float(value10)
     else:
         tk.messagebox.showinfo('Ошибка ввода', ('Вводите числовые значения градиента'))
         return 0
-        
- 
 
     value11 = entry_maxgradient.get()
     if value11 == '':
@@ -137,15 +129,10 @@ def MainFunc():
             tk.messagebox.showinfo('Ошибка ввода', ('Значение градиента должно быть от 78 до 100'))
             return 0
         else:
-            dictionary["maxFade"]  = float(value11)
+            dictionary["maxFade"] = float(value11)
     else:
         tk.messagebox.showinfo('Ошибка ввода', ('Вводите числовые значения градиента'))
         return 0
-
-
-
-
-
 
     value12 = kriteriy.get(combobox_kriteries.get())
     if value12 == kriteriy.get(1):
@@ -156,8 +143,6 @@ def MainFunc():
     x = json.dumps(dictionary)
     r = requests.post("http://localhost:5000", data=x, headers=headers)
     print(r.json())
-
-    
 
     if r.json() == [{'errors': 'No information with this request'}]:
         tk.messagebox.showinfo('', ('Ничего не найдено'))
@@ -213,229 +198,234 @@ def MainFunc():
     new_window.geometry('720x950')
 
     if len(r.json()) > 0:
-        labelNumber = ctk.CTkLabel(new_window, text='Item 1', text_color='black', font=('Bold', 18))
-        labelNumber.place(x=0, y=0)
-        marketlabel1 = ctk.CTkLabel(new_window, text=str(first['marketPlace']), text_color='black', font=('Bold', 15))
-        marketlabel1.place(x = 50, y = 0)
-        labelNaiming = ctk.CTkLabel(new_window, text='Name:', text_color='black', font=('Bold', 15))
-        labelNaiming.place(x=0, y=20)
-        textnaiming = ctk.CTkLabel(new_window, text=str(first['name']), text_color='black', font=('Bold', 15))
-        textnaiming.place(x=45, y=20)
-        labelPricing = ctk.CTkLabel(new_window, text='Price:', text_color='black', font=('Bold', 15))
-        labelPricing.place(x=0, y=40)
-        textpricing = ctk.CTkLabel(new_window, text=str(first['price']), text_color='black', font=('Bold', 15))
-        textpricing.place(x=45, y=40)
-        labelfloat = ctk.CTkLabel(new_window, text='Float:', text_color='black', font=('Bold', 15))
-        labelfloat.place(x=0, y=60)
-        textfloat = ctk.CTkLabel(new_window, text=str(first['float']), text_color='black', font=('Bold', 15))
-        textfloat.place(x=45, y=60)
-        labelStatTrak = ctk.CTkLabel(new_window, text='StatTrak:', text_color='black', font=('Bold', 15))
-        labelStatTrak.place(x=0, y=80)
-        textStatTrak = ctk.CTkLabel(new_window, text=str(first['isStatTrak']), text_color='black', font=('Bold', 15))
-        textStatTrak.place(x=60, y=80)
-        labelSouvenir = ctk.CTkLabel(new_window, text='Souvenir:', text_color='black', font=('Bold', 15))
-        labelSouvenir.place(x=0, y=100)
-        textSouvenir = ctk.CTkLabel(new_window, text=str(first['isSouvenir']), text_color='black', font=('Bold', 15))
-        textSouvenir.place(x=62, y=100)
-        labelRarity = ctk.CTkLabel(new_window, text='Rarity:', text_color='black', font=('Bold', 15))
-        labelRarity.place(x=0, y=120)
-        textRarity = ctk.CTkLabel(new_window, text=str(first['rarity']), text_color='black', font=('Bold', 15))
-        textRarity.place(x=45, y=120)
-        labelStickers = ctk.CTkLabel(new_window, text='Stickers:', text_color='black', font=('Bold', 15))
-        labelStickers.place(x=0, y=140)
+        label_number = ctk.CTkLabel(new_window, text='Item 1', text_color='black', font=('Bold', 18))
+        label_number.place(x=0, y=0)
+        market_label1 = ctk.CTkLabel(new_window, text=str(first['marketPlace']), text_color='black', font=('Bold', 15))
+        market_label1.place(x=50, y=0)
+        label_naiming = ctk.CTkLabel(new_window, text='Name:', text_color='black', font=('Bold', 15))
+        label_naiming.place(x=0, y=20)
+        text_naiming = ctk.CTkLabel(new_window, text=str(first['name']), text_color='black', font=('Bold', 15))
+        text_naiming.place(x=45, y=20)
+        label_pricing = ctk.CTkLabel(new_window, text='Price:', text_color='black', font=('Bold', 15))
+        label_pricing.place(x=0, y=40)
+        text_pricing = ctk.CTkLabel(new_window, text=str(first['price']), text_color='black', font=('Bold', 15))
+        text_pricing.place(x=45, y=40)
+        label_float = ctk.CTkLabel(new_window, text='Float:', text_color='black', font=('Bold', 15))
+        label_float.place(x=0, y=60)
+        text_float = ctk.CTkLabel(new_window, text=str(first['float']), text_color='black', font=('Bold', 15))
+        text_float.place(x=45, y=60)
+        label_statTrak = ctk.CTkLabel(new_window, text='StatTrak:', text_color='black', font=('Bold', 15))
+        label_statTrak.place(x=0, y=80)
+        text_statTrak = ctk.CTkLabel(new_window, text=str(first['isStatTrak']), text_color='black', font=('Bold', 15))
+        text_statTrak.place(x=60, y=80)
+        label_souvenir = ctk.CTkLabel(new_window, text='Souvenir:', text_color='black', font=('Bold', 15))
+        label_souvenir.place(x=0, y=100)
+        text_souvenir = ctk.CTkLabel(new_window, text=str(first['isSouvenir']), text_color='black', font=('Bold', 15))
+        text_souvenir.place(x=62, y=100)
+        label_rarity = ctk.CTkLabel(new_window, text='Rarity:', text_color='black', font=('Bold', 15))
+        label_rarity.place(x=0, y=120)
+        text_rarity = ctk.CTkLabel(new_window, text=str(first['rarity']), text_color='black', font=('Bold', 15))
+        text_rarity.place(x=45, y=120)
+        label_stickers = ctk.CTkLabel(new_window, text='Stickers:', text_color='black', font=('Bold', 15))
+        label_stickers.place(x=0, y=140)
         combobox_stickers11 = ctk.CTkComboBox(new_window, values=stickers11, state='readonly', height=5,
                                               corner_radius=0)
         combobox_stickers11.place(x=60, y=142)
-        labeldelivery = ctk.CTkLabel(new_window, text='Delivery:', text_color='black', font=('Bold', 15))
-        labeldelivery.place(x=0, y=165)
-        textdelivery = ctk.CTkLabel(new_window, text=str(first['delivery']), text_color='black', font=('Bold', 15))
-        textdelivery.place(x=60, y=165)
+        label_delivery = ctk.CTkLabel(new_window, text='Delivery:', text_color='black', font=('Bold', 15))
+        label_delivery.place(x=0, y=165)
+        text_delivery = ctk.CTkLabel(new_window, text=str(first['delivery']), text_color='black', font=('Bold', 15))
+        text_delivery.place(x=60, y=165)
         if len(r.json()) > 1:
-            labelNumber2 = ctk.CTkLabel(new_window, text='Item 2', text_color='black', font=('Bold', 18))
-            labelNumber2.place(x=0, y=190)
-            marketlabel2 = ctk.CTkLabel(new_window, text=str(second['marketPlace']), text_color='black', font=('Bold', 15))
-            marketlabel2.place(x = 50, y = 190)
-            labelNaiming2 = ctk.CTkLabel(new_window, text='Name:', text_color='black', font=('Bold', 15))
-            labelNaiming2.place(x=0, y=210)
-            textnaiming2 = ctk.CTkLabel(new_window, text=str(second['name']), text_color='black', font=('Bold', 15))
-            textnaiming2.place(x=45, y=210)
-            labelPricing2 = ctk.CTkLabel(new_window, text='Price:', text_color='black', font=('Bold', 15))
-            labelPricing2.place(x=0, y=230)
-            textpricing2 = ctk.CTkLabel(new_window, text=str(second['price']), text_color='black', font=('Bold', 15))
-            textpricing2.place(x=45, y=230)
-            labelfloat2 = ctk.CTkLabel(new_window, text='Float:', text_color='black', font=('Bold', 15))
-            labelfloat2.place(x=0, y=250)
-            textfloat2 = ctk.CTkLabel(new_window, text=str(second['float']), text_color='black', font=('Bold', 15))
-            textfloat2.place(x=45, y=250)
-            labelStatTrak2 = ctk.CTkLabel(new_window, text='StatTrak:', text_color='black', font=('Bold', 15))
-            labelStatTrak2.place(x=0, y=270)
-            textStatTrak2 = ctk.CTkLabel(new_window, text=str(second['isStatTrak']), text_color='black',
+            label_number2 = ctk.CTkLabel(new_window, text='Item 2', text_color='black', font=('Bold', 18))
+            label_number2.place(x=0, y=190)
+            market_label2 = ctk.CTkLabel(new_window, text=str(second['marketPlace']), text_color='black',
                                          font=('Bold', 15))
-            textStatTrak2.place(x=60, y=270)
-            labelSouvenir2 = ctk.CTkLabel(new_window, text='Souvenir:', text_color='black', font=('Bold', 15))
-            labelSouvenir2.place(x=0, y=290)
-            textSouvenir2 = ctk.CTkLabel(new_window, text=str(second['isSouvenir']), text_color='black',
-                                         font=('Bold', 15))
-            textSouvenir2.place(x=62, y=290)
-            labelRarity2 = ctk.CTkLabel(new_window, text='Rarity:', text_color='black', font=('Bold', 15))
-            labelRarity2.place(x=0, y=310)
-            textRarity2 = ctk.CTkLabel(new_window, text=str(second['rarity']), text_color='black', font=('Bold', 15))
-            textRarity2.place(x=45, y=310)
-            labelStickers2 = ctk.CTkLabel(new_window, text='Stickers:', text_color='black', font=('Bold', 15))
-            labelStickers2.place(x=0, y=330)
+            market_label2.place(x=50, y=190)
+            label_naiming2 = ctk.CTkLabel(new_window, text='Name:', text_color='black', font=('Bold', 15))
+            label_naiming2.place(x=0, y=210)
+            text_naiming2 = ctk.CTkLabel(new_window, text=str(second['name']), text_color='black', font=('Bold', 15))
+            text_naiming2.place(x=45, y=210)
+            label_pricing2 = ctk.CTkLabel(new_window, text='Price:', text_color='black', font=('Bold', 15))
+            label_pricing2.place(x=0, y=230)
+            text_pricing2 = ctk.CTkLabel(new_window, text=str(second['price']), text_color='black', font=('Bold', 15))
+            text_pricing2.place(x=45, y=230)
+            label_float2 = ctk.CTkLabel(new_window, text='Float:', text_color='black', font=('Bold', 15))
+            label_float2.place(x=0, y=250)
+            text_float2 = ctk.CTkLabel(new_window, text=str(second['float']), text_color='black', font=('Bold', 15))
+            text_float2.place(x=45, y=250)
+            label_statTrak2 = ctk.CTkLabel(new_window, text='StatTrak:', text_color='black', font=('Bold', 15))
+            label_statTrak2.place(x=0, y=270)
+            text_statTrak2 = ctk.CTkLabel(new_window, text=str(second['isStatTrak']), text_color='black',
+                                          font=('Bold', 15))
+            text_statTrak2.place(x=60, y=270)
+            label_souvenir2 = ctk.CTkLabel(new_window, text='Souvenir:', text_color='black', font=('Bold', 15))
+            label_souvenir2.place(x=0, y=290)
+            text_souvenir2 = ctk.CTkLabel(new_window, text=str(second['isSouvenir']), text_color='black',
+                                          font=('Bold', 15))
+            text_souvenir2.place(x=62, y=290)
+            label_rarity2 = ctk.CTkLabel(new_window, text='Rarity:', text_color='black', font=('Bold', 15))
+            label_rarity2.place(x=0, y=310)
+            text_rarity2 = ctk.CTkLabel(new_window, text=str(second['rarity']), text_color='black', font=('Bold', 15))
+            text_rarity2.place(x=45, y=310)
+            label_stickers2 = ctk.CTkLabel(new_window, text='Stickers:', text_color='black', font=('Bold', 15))
+            label_stickers2.place(x=0, y=330)
             combobox_stickers12 = ctk.CTkComboBox(new_window, values=stickers12, state='readonly', height=5,
                                                   corner_radius=0)
             combobox_stickers12.place(x=60, y=332)
-            labeldelivery2 = ctk.CTkLabel(new_window, text='Delivery:', text_color='black', font=('Bold', 15))
-            labeldelivery2.place(x=0, y=355)
-            textdelivery2 = ctk.CTkLabel(new_window, text=str(second['delivery']), text_color='black',
-                                         font=('Bold', 15))
-            textdelivery2.place(x=60, y=355)
+            label_delivery2 = ctk.CTkLabel(new_window, text='Delivery:', text_color='black', font=('Bold', 15))
+            label_delivery2.place(x=0, y=355)
+            text_delivery2 = ctk.CTkLabel(new_window, text=str(second['delivery']), text_color='black',
+                                          font=('Bold', 15))
+            text_delivery2.place(x=60, y=355)
             if len(r.json()) > 2:
-                labelNumber3 = ctk.CTkLabel(new_window, text='Item 3', text_color='black', font=('Bold', 18))
-                labelNumber3.place(x=0, y=380)
-                marketlabel3 = ctk.CTkLabel(new_window, text=str(third['marketPlace']), text_color='black', font=('Bold', 15))
-                marketlabel3.place(x = 50, y = 380)
-                labelNaiming3 = ctk.CTkLabel(new_window, text='Name:', text_color='black', font=('Bold', 15))
-                labelNaiming3.place(x=0, y=400)
-                textnaiming3 = ctk.CTkLabel(new_window, text=str(third['name']), text_color='black', font=('Bold', 15))
-                textnaiming3.place(x=45, y=400)
-                labelPricing3 = ctk.CTkLabel(new_window, text='Price:', text_color='black', font=('Bold', 15))
-                labelPricing3.place(x=0, y=420)
-                textpricing3 = ctk.CTkLabel(new_window, text=str(third['price']), text_color='black', font=('Bold', 15))
-                textpricing3.place(x=45, y=420)
-                labelfloat3 = ctk.CTkLabel(new_window, text='Float:', text_color='black', font=('Bold', 15))
-                labelfloat3.place(x=0, y=440)
-                textfloat3 = ctk.CTkLabel(new_window, text=str(third['float']), text_color='black', font=('Bold', 15))
-                textfloat3.place(x=45, y=440)
-                labelStatTrak3 = ctk.CTkLabel(new_window, text='StatTrak:', text_color='black', font=('Bold', 15))
-                labelStatTrak3.place(x=0, y=460)
-                textStatTrak3 = ctk.CTkLabel(new_window, text=str(third['isStatTrak']), text_color='black',
+                label_number3 = ctk.CTkLabel(new_window, text='Item 3', text_color='black', font=('Bold', 18))
+                label_number3.place(x=0, y=380)
+                market_label3 = ctk.CTkLabel(new_window, text=str(third['marketPlace']), text_color='black',
                                              font=('Bold', 15))
-                textStatTrak3.place(x=60, y=460)
-                labelSouvenir3 = ctk.CTkLabel(new_window, text='Souvenir:', text_color='black', font=('Bold', 15))
-                labelSouvenir3.place(x=0, y=480)
-                textSouvenir3 = ctk.CTkLabel(new_window, text=str(third['isSouvenir']), text_color='black',
+                market_label3.place(x=50, y=380)
+                label_naiming3 = ctk.CTkLabel(new_window, text='Name:', text_color='black', font=('Bold', 15))
+                label_naiming3.place(x=0, y=400)
+                text_naiming3 = ctk.CTkLabel(new_window, text=str(third['name']), text_color='black', font=('Bold', 15))
+                text_naiming3.place(x=45, y=400)
+                label_pricing3 = ctk.CTkLabel(new_window, text='Price:', text_color='black', font=('Bold', 15))
+                label_pricing3.place(x=0, y=420)
+                text_pricing3 = ctk.CTkLabel(new_window, text=str(third['price']), text_color='black',
                                              font=('Bold', 15))
-                textSouvenir3.place(x=62, y=480)
-                labelRarity3 = ctk.CTkLabel(new_window, text='Rarity:', text_color='black', font=('Bold', 15))
-                labelRarity3.place(x=0, y=500)
-                textRarity3 = ctk.CTkLabel(new_window, text=str(third['rarity']), text_color='black', font=('Bold', 15))
-                textRarity3.place(x=45, y=500)
-                labelStickers3 = ctk.CTkLabel(new_window, text='Stickers:', text_color='black', font=('Bold', 15))
-                labelStickers3.place(x=0, y=520)
+                text_pricing3.place(x=45, y=420)
+                label_float3 = ctk.CTkLabel(new_window, text='Float:', text_color='black', font=('Bold', 15))
+                label_float3.place(x=0, y=440)
+                text_float3 = ctk.CTkLabel(new_window, text=str(third['float']), text_color='black', font=('Bold', 15))
+                text_float3.place(x=45, y=440)
+                label_statTrak3 = ctk.CTkLabel(new_window, text='StatTrak:', text_color='black', font=('Bold', 15))
+                label_statTrak3.place(x=0, y=460)
+                text_statTrak3 = ctk.CTkLabel(new_window, text=str(third['isStatTrak']), text_color='black',
+                                              font=('Bold', 15))
+                text_statTrak3.place(x=60, y=460)
+                label_souvenir3 = ctk.CTkLabel(new_window, text='Souvenir:', text_color='black', font=('Bold', 15))
+                label_souvenir3.place(x=0, y=480)
+                text_souvenir3 = ctk.CTkLabel(new_window, text=str(third['isSouvenir']), text_color='black',
+                                              font=('Bold', 15))
+                text_souvenir3.place(x=62, y=480)
+                label_rarity3 = ctk.CTkLabel(new_window, text='Rarity:', text_color='black', font=('Bold', 15))
+                label_rarity3.place(x=0, y=500)
+                text_rarity3 = ctk.CTkLabel(new_window, text=str(third['rarity']), text_color='black',
+                                            font=('Bold', 15))
+                text_rarity3.place(x=45, y=500)
+                label_stickers3 = ctk.CTkLabel(new_window, text='Stickers:', text_color='black', font=('Bold', 15))
+                label_stickers3.place(x=0, y=520)
                 combobox_stickers13 = ctk.CTkComboBox(new_window, values=stickers13, state='readonly', height=5,
                                                       corner_radius=0)
                 combobox_stickers13.place(x=60, y=522)
-                labeldelivery3 = ctk.CTkLabel(new_window, text='Delivery:', text_color='black', font=('Bold', 15))
-                labeldelivery3.place(x=0, y=545)
-                textdelivery3 = ctk.CTkLabel(new_window, text=str(third['delivery']), text_color='black',
-                                             font=('Bold', 15))
-                textdelivery3.place(x=60, y=545)
-                if len(r.json()) > 3:
-                    labelNumber4 = ctk.CTkLabel(new_window, text='Item 4', text_color='black', font=('Bold', 18))
-                    labelNumber4.place(x=0, y=570)
-                    marketlabel4 = ctk.CTkLabel(new_window, text=str(fourth['marketPlace']), text_color='black', font=('Bold', 15))
-                    marketlabel4.place(x = 50, y = 570)
-                    labelNaiming4 = ctk.CTkLabel(new_window, text='Name:', text_color='black', font=('Bold', 15))
-                    labelNaiming4.place(x=0, y=590)
-                    textnaiming4 = ctk.CTkLabel(new_window, text=str(fourth['name']), text_color='black',
-                                                font=('Bold', 15))
-                    textnaiming4.place(x=45, y=590)
-                    labelPricing4 = ctk.CTkLabel(new_window, text='Price:', text_color='black', font=('Bold', 15))
-                    labelPricing4.place(x=0, y=610)
-                    textpricing4 = ctk.CTkLabel(new_window, text=str(fourth['price']), text_color='black',
-                                                font=('Bold', 15))
-                    textpricing4.place(x=45, y=610)
-                    labelfloat4 = ctk.CTkLabel(new_window, text='Float:', text_color='black', font=('Bold', 15))
-                    labelfloat4.place(x=0, y=630)
-                    textfloat4 = ctk.CTkLabel(new_window, text=str(fourth['float']), text_color='black',
+                label_delivery3 = ctk.CTkLabel(new_window, text='Delivery:', text_color='black', font=('Bold', 15))
+                label_delivery3.place(x=0, y=545)
+                text_delivery3 = ctk.CTkLabel(new_window, text=str(third['delivery']), text_color='black',
                                               font=('Bold', 15))
-                    textfloat4.place(x=45, y=630)
-                    labelStatTrak4 = ctk.CTkLabel(new_window, text='StatTrak:', text_color='black', font=('Bold', 15))
-                    labelStatTrak4.place(x=0, y=650)
-                    textStatTrak4 = ctk.CTkLabel(new_window, text=str(fourth['isStatTrak']), text_color='black',
+                text_delivery3.place(x=60, y=545)
+                if len(r.json()) > 3:
+                    label_number4 = ctk.CTkLabel(new_window, text='Item 4', text_color='black', font=('Bold', 18))
+                    label_number4.place(x=0, y=570)
+                    market_label4 = ctk.CTkLabel(new_window, text=str(fourth['marketPlace']), text_color='black',
                                                  font=('Bold', 15))
-                    textStatTrak4.place(x=60, y=650)
-                    labelSouvenir4 = ctk.CTkLabel(new_window, text='Souvenir:', text_color='black', font=('Bold', 15))
-                    labelSouvenir4.place(x=0, y=670)
-                    textSouvenir4 = ctk.CTkLabel(new_window, text=str(fourth['isSouvenir']), text_color='black',
+                    market_label4.place(x=50, y=570)
+                    label_naiming4 = ctk.CTkLabel(new_window, text='Name:', text_color='black', font=('Bold', 15))
+                    label_naiming4.place(x=0, y=590)
+                    text_naiming4 = ctk.CTkLabel(new_window, text=str(fourth['name']), text_color='black',
                                                  font=('Bold', 15))
-                    textSouvenir4.place(x=62, y=670)
-                    labelRarity4 = ctk.CTkLabel(new_window, text='Rarity:', text_color='black', font=('Bold', 15))
-                    labelRarity4.place(x=0, y=690)
-                    textRarity4 = ctk.CTkLabel(new_window, text=str(fourth['rarity']), text_color='black',
+                    text_naiming4.place(x=45, y=590)
+                    label_pricing4 = ctk.CTkLabel(new_window, text='Price:', text_color='black', font=('Bold', 15))
+                    label_pricing4.place(x=0, y=610)
+                    text_pricing4 = ctk.CTkLabel(new_window, text=str(fourth['price']), text_color='black',
+                                                 font=('Bold', 15))
+                    text_pricing4.place(x=45, y=610)
+                    label_float4 = ctk.CTkLabel(new_window, text='Float:', text_color='black', font=('Bold', 15))
+                    label_float4.place(x=0, y=630)
+                    text_float4 = ctk.CTkLabel(new_window, text=str(fourth['float']), text_color='black',
                                                font=('Bold', 15))
-                    textRarity4.place(x=45, y=690)
-                    labelStickers4 = ctk.CTkLabel(new_window, text='Stickers:', text_color='black', font=('Bold', 15))
-                    labelStickers4.place(x=0, y=710)
+                    text_float4.place(x=45, y=630)
+                    label_statTrak4 = ctk.CTkLabel(new_window, text='StatTrak:', text_color='black', font=('Bold', 15))
+                    label_statTrak4.place(x=0, y=650)
+                    text_statTrak4 = ctk.CTkLabel(new_window, text=str(fourth['isStatTrak']), text_color='black',
+                                                  font=('Bold', 15))
+                    text_statTrak4.place(x=60, y=650)
+                    label_souvenir4 = ctk.CTkLabel(new_window, text='Souvenir:', text_color='black', font=('Bold', 15))
+                    label_souvenir4.place(x=0, y=670)
+                    text_souvenir4 = ctk.CTkLabel(new_window, text=str(fourth['isSouvenir']), text_color='black',
+                                                  font=('Bold', 15))
+                    text_souvenir4.place(x=62, y=670)
+                    label_rarity4 = ctk.CTkLabel(new_window, text='Rarity:', text_color='black', font=('Bold', 15))
+                    label_rarity4.place(x=0, y=690)
+                    text_rarity4 = ctk.CTkLabel(new_window, text=str(fourth['rarity']), text_color='black',
+                                                font=('Bold', 15))
+                    text_rarity4.place(x=45, y=690)
+                    label_stickers4 = ctk.CTkLabel(new_window, text='Stickers:', text_color='black', font=('Bold', 15))
+                    label_stickers4.place(x=0, y=710)
                     combobox_stickers14 = ctk.CTkComboBox(new_window, values=stickers14, state='readonly', height=5,
                                                           corner_radius=0)
                     combobox_stickers14.place(x=60, y=712)
-                    labeldelivery4 = ctk.CTkLabel(new_window, text='Delivery:', text_color='black', font=('Bold', 15))
-                    labeldelivery4.place(x=0, y=735)
-                    textdelivery4 = ctk.CTkLabel(new_window, text=str(fourth['delivery']), text_color='black',
-                                                 font=('Bold', 15))
-                    textdelivery4.place(x=60, y=735)
-                    if len(r.json()) > 4:
-                        labelNumber5 = ctk.CTkLabel(new_window, text='Item 5', text_color='black', font=('Bold', 18))
-                        labelNumber5.place(x=300, y=0)
-                        marketlabel5 = ctk.CTkLabel(new_window, text=str(fifth['marketPlace']), text_color='black', font=('Bold', 15))
-                        marketlabel5.place(x = 350, y = 0)
-                        labelNaiming5 = ctk.CTkLabel(new_window, text='Name:', text_color='black', font=('Bold', 15))
-                        labelNaiming5.place(x=300, y=20)
-                        textnaiming5 = ctk.CTkLabel(new_window, text=str(fifth['name']), text_color='black',
-                                                    font=('Bold', 15))
-                        textnaiming5.place(x=345, y=20)
-                        labelPricing5 = ctk.CTkLabel(new_window, text='Price:', text_color='black', font=('Bold', 15))
-                        labelPricing5.place(x=300, y=40)
-                        textpricing5 = ctk.CTkLabel(new_window, text=str(fifth['price']), text_color='black',
-                                                    font=('Bold', 15))
-                        textpricing5.place(x=345, y=40)
-                        labelfloat5 = ctk.CTkLabel(new_window, text='Float:', text_color='black', font=('Bold', 15))
-                        labelfloat5.place(x=300, y=60)
-                        textfloat5 = ctk.CTkLabel(new_window, text=str(fifth['float']), text_color='black',
+                    label_delivery4 = ctk.CTkLabel(new_window, text='Delivery:', text_color='black', font=('Bold', 15))
+                    label_delivery4.place(x=0, y=735)
+                    text_delivery4 = ctk.CTkLabel(new_window, text=str(fourth['delivery']), text_color='black',
                                                   font=('Bold', 15))
-                        textfloat5.place(x=345, y=60)
-                        labelStatTrak5 = ctk.CTkLabel(new_window, text='StatTrak:', text_color='black',
-                                                      font=('Bold', 15))
-                        labelStatTrak5.place(x=300, y=80)
-                        textStatTrak5 = ctk.CTkLabel(new_window, text=str(fifth['isStatTrak']), text_color='black',
+                    text_delivery4.place(x=60, y=735)
+                    if len(r.json()) > 4:
+                        label_number5 = ctk.CTkLabel(new_window, text='Item 5', text_color='black', font=('Bold', 18))
+                        label_number5.place(x=300, y=0)
+                        market_label5: CTkLabel = ctk.CTkLabel(new_window, text=str(fifth['marketPlace']),
+                                                               text_color='black',
+                                                               font=('Bold', 15))
+                        market_label5.place(x=350, y=0)
+                        label_naiming5 = ctk.CTkLabel(new_window, text='Name:', text_color='black', font=('Bold', 15))
+                        label_naiming5.place(x=300, y=20)
+                        text_naiming5 = ctk.CTkLabel(new_window, text=str(fifth['name']), text_color='black',
                                                      font=('Bold', 15))
-                        textStatTrak5.place(x=360, y=80)
-                        labelSouvenir5 = ctk.CTkLabel(new_window, text='Souvenir:', text_color='black',
-                                                      font=('Bold', 15))
-                        labelSouvenir5.place(x=300, y=100)
-                        textSouvenir5 = ctk.CTkLabel(new_window, text=str(fifth['isSouvenir']), text_color='black',
+                        text_naiming5.place(x=345, y=20)
+                        label_pricing5 = ctk.CTkLabel(new_window, text='Price:', text_color='black', font=('Bold', 15))
+                        label_pricing5.place(x=300, y=40)
+                        text_pricing5 = ctk.CTkLabel(new_window, text=str(fifth['price']), text_color='black',
                                                      font=('Bold', 15))
-                        textSouvenir5.place(x=362, y=100)
-                        labelRarity5 = ctk.CTkLabel(new_window, text='Rarity:', text_color='black', font=('Bold', 15))
-                        labelRarity5.place(x=300, y=120)
-                        textRarity5 = ctk.CTkLabel(new_window, text=str(fifth['rarity']), text_color='black',
+                        text_pricing5.place(x=345, y=40)
+                        label_float5 = ctk.CTkLabel(new_window, text='Float:', text_color='black', font=('Bold', 15))
+                        label_float5.place(x=300, y=60)
+                        text_float5 = ctk.CTkLabel(new_window, text=str(fifth['float']), text_color='black',
                                                    font=('Bold', 15))
-                        textRarity5.place(x=345, y=120)
-                        labelStickers5 = ctk.CTkLabel(new_window, text='Stickers:', text_color='black',
+                        text_float5.place(x=345, y=60)
+                        label_statTrak5 = ctk.CTkLabel(new_window, text='StatTrak:', text_color='black',
+                                                       font=('Bold', 15))
+                        label_statTrak5.place(x=300, y=80)
+                        text_statTrak5 = ctk.CTkLabel(new_window, text=str(fifth['isStatTrak']), text_color='black',
                                                       font=('Bold', 15))
-                        labelStickers5.place(x=300, y=140)
+                        text_statTrak5.place(x=360, y=80)
+                        label_souvenir5 = ctk.CTkLabel(new_window, text='Souvenir:', text_color='black',
+                                                       font=('Bold', 15))
+                        label_souvenir5.place(x=300, y=100)
+                        text_souvenir5 = ctk.CTkLabel(new_window, text=str(fifth['isSouvenir']), text_color='black',
+                                                      font=('Bold', 15))
+                        text_souvenir5.place(x=362, y=100)
+                        label_rarity5 = ctk.CTkLabel(new_window, text='Rarity:', text_color='black', font=('Bold', 15))
+                        label_rarity5.place(x=300, y=120)
+                        text_rarity5 = ctk.CTkLabel(new_window, text=str(fifth['rarity']), text_color='black',
+                                                    font=('Bold', 15))
+                        text_rarity5.place(x=345, y=120)
+                        label_stickers5 = ctk.CTkLabel(new_window, text='Stickers:', text_color='black',
+                                                       font=('Bold', 15))
+                        label_stickers5.place(x=300, y=140)
                         combobox_stickers15 = ctk.CTkComboBox(new_window, values=stickers15, state='readonly', height=5,
                                                               corner_radius=0)
                         combobox_stickers15.place(x=360, y=142)
-                        labeldelivery5 = ctk.CTkLabel(new_window, text='Delivery:', text_color='black',
+                        label_delivery5 = ctk.CTkLabel(new_window, text='Delivery:', text_color='black',
+                                                       font=('Bold', 15))
+                        label_delivery5.place(x=300, y=165)
+                        text_delivery5 = ctk.CTkLabel(new_window, text=str(fifth['delivery']), text_color='black',
                                                       font=('Bold', 15))
-                        labeldelivery5.place(x=300, y=165)
-                        textdelivery5 = ctk.CTkLabel(new_window, text=str(fifth['delivery']), text_color='black',
-                                                     font=('Bold', 15))
-                        textdelivery5.place(x=360, y=165)
+                        text_delivery5.place(x=360, y=165)
 
     a = r.json()
     if r.status_code == 200:
+        print(type(r.json()))
         return r.json()
     else:
         tk.messagebox.showinfo('Server Error', ('Something with server'))
         return [{"errors": "Something with server"}]
-
-
-
 
 
 # Функция, срабатывающая при нажати на кнопку Steam Item Search
@@ -448,15 +438,16 @@ def steamfunc():
     balance_label.place(x=0, y=0)
     balance_entry = ctk.CTkEntry(steam_window, width=70, height=10, corner_radius=5)
     balance_entry.place(x=132, y=2)
-    
+
     # Функция, срабатывающая при нажатии на кнопку search в окне Steam Search
     def sendform():
-        balance = balance_entry.get()           
+        balance = balance_entry.get()
         if balance != '':
             if balance.isdigit():
                 formdict["value"] = float(balance)
                 v = json.dumps(formdict)
                 print(v)
+                print(type(v))
                 return v
             else:
                 tk.messagebox.showinfo('Ошибка ввода', ('Поле ввода баланса должно состоять из числовых значений'))
@@ -467,9 +458,6 @@ def steamfunc():
 
     steam_searchbtn = ctk.CTkButton(steam_window, text='Search', command=sendform, corner_radius=30)
     steam_searchbtn.place(x=0, y=40)
-
-
-
 
 
 # Функция, которая срабатывает при нажатии на кнопку Clean Values
@@ -493,6 +481,8 @@ def clear():
 #########Заимствованная функция###################
 def change_mode_menu(new_appearance_mode):
     ctk.set_appearance_mode(new_appearance_mode)
+
+
 #########Конец заимствованной функции#############
 
 # Название Приложения
@@ -529,18 +519,18 @@ types = {'': '', 'Ножи': 2, 'Штурмовые Винтовки': 3,
          'Перчатки': 13}
 # Выпадающий список для типов предметов
 combobox_types = ctk.CTkComboBox(app, values=tuple(types.keys()), state='readonly')
-#combobox_types.SelectedItem = ''
+# combobox_types.SelectedItem = ''
 combobox_types.place(x=0, y=145)
 # Текст качества предемтов
 label_Quality = ctk.CTkLabel(app, text='Quality:')
 label_Quality.place(x=200, y=18)
-# Словарь для качества предметов 
+# Словарь для качества предметов
 qualities = {'': '', 'FactoryNew': 'fn', 'MinimalWear': 'mw',
              'FieldTested': 'ft', 'WellWorn': 'ww',
              'BattleScared': 'bs'}
 # Выпадающий список с качеством предметов
 combobox_qualities = ctk.CTkComboBox(app, values=tuple(qualities.keys()), state='readonly')
-#combobox_qualities.SelectedItem = ''
+# combobox_qualities.SelectedItem = ''
 combobox_qualities.place(x=200, y=40)
 # Текст цвета предмета
 label_Color = ctk.CTkLabel(app, text='Color:')
@@ -551,7 +541,7 @@ colours = {'': '', 'Orange': 1, 'Blue': 2,
            'Grey': 6, 'Brown': 7}
 # Выпадающий список для цветов
 combobox_colours = ctk.CTkComboBox(app, values=tuple(colours.keys()), state='readonly')
-#combobox_colours.SelectedItem = ''
+# combobox_colours.SelectedItem = ''
 combobox_colours.place(x=200, y=90)
 # Текст NameTag
 label_NameTag = ctk.CTkLabel(app, text='NameTag:')
@@ -667,10 +657,9 @@ label_Filtres.place(x=550, y=120)
 kriteriy = {'По цене': 1, 'По времени': 2}
 
 # Выпадающий список критериев:
-combobox_kriteries = ctk.CTkComboBox(app, values=tuple(kriteriy.keys()), state = 'readonly')
+combobox_kriteries = ctk.CTkComboBox(app, values=tuple(kriteriy.keys()), state='readonly')
 combobox_kriteries.set('По цене')
 combobox_kriteries.place(x=550, y=145)
-
 
 ########Заимствованная часть кода#########
 # Выпадающий список со сменой текущего оформления
@@ -681,14 +670,8 @@ appearance_mode_option_menu.place(x=550, y=250)
 ########Конец заимствованной части кода#########
 
 
-
-
 # Кнопка Steam Items Search
 steam_button = ctk.CTkButton(app, text='Steam Items Search', command=steamfunc, corner_radius=30)
 steam_button.place(x=550, y=285)
 
 app.mainloop()
-
-
-
-
