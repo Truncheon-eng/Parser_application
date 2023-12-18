@@ -1,20 +1,125 @@
-import customtkinter as ctk
-from customtkinter import *
-import tkinter as tk
-from tkinter import *
-import json
-import requests
-from customtkinter import CTkLabel
+def steamfunc():
+    """Функция открывает окно для поиска на Steam.
 
-app = ctk.CTk()
-app.geometry('720x500')
-app.title('TradeApp')
-ctk.set_appearance_mode('system')
+    Функция создает дочернее окно steam-window для ввода баланса и
+    отправки запроса на поиск элмементов по Steam.
 
-headers = {'Content-type': 'application/json', 'Accept': 'application/json'}
+    :params: нет параметров, функция срабатывает при нажати на кнопку steam_button
+    (Кнопка 'Steam Items Search' на главном экране)
+    :return: -
+    :raise: -
+    :rtype: - 
+    """
+    formdict = {}
+    steam_window = Toplevel(app)
+    steam_window.title('Steam Search')
+    steam_window.geometry('600x600')
+    balance_label = ctk.CTkLabel(steam_window, text='Enter Balance:', text_color='black', font=('Bold', 20))
+    balance_label.place(x=0, y=0)
+    balance_entry = ctk.CTkEntry(steam_window, width=70, height=10, corner_radius=5)
+    balance_entry.place(x=132, y=2)
+
+def sendform():
+    """Функция обрабатывает введенное значение баланса.
+
+    Функция проверяет введенное значение баланса и при успешной
+    проверке формирует JSON-строку, содержащую введенное значение.
+    params: нет параметров, функция срабатывает при нажатии на кнопку steam_searchbtn
+    (Кнопка "Search" в окне Steam Search)
+    :raise: messagebox.showinfo('Ошибка ввода', ('Поле ввода баланса должно состоять из числовых значений'))
+    if balance.isdigit() == False
+    :raise: messagebox.showinfo('Ошибка ввода', ('Введите баланс')) if balance == ''
+    :return v = json.dumps(formdict)
+    :rtype: str
+    """
+    balance = balance_entry.get()
+    if balance != '':
+        if balance.isdigit():
+            formdict["value"] = float(balance)
+            v = json.dumps(formdict)
+            print(v)
+            print(type(v))
+            return v
+        else:
+            tk.messagebox.showinfo('Ошибка ввода', ('Поле ввода баланса должно состоять из числовых значений'))
+            return 0
+    else:
+        tk.messagebox.showinfo('Ошибка ввода', ('Введите баланс'))
+        return 0
+
+steam_searchbtn = ctk.CTkButton(steam_window, text='Search', command=sendform, corner_radius=30)
+steam_searchbtn.place(x=0, y=40)
+
+
+def clear():
+    """Очистка полей ввода в UI.
+
+    Функция очищает все поля ввода в интерфейсе.
+
+    :params: нет параметров, функция срабатывает при нажати на кнопку steam_button
+    (Кнопка 'Clear Values' на главном экране)
+    :raise: -
+    :return: - (обнуляет Var для radiobuttons, присваивает пустую строку выпадающим спискам, очищает поля ввода entry,
+    после нажатия происходит следующее:
+    stickers_var.set(0)
+    souvenir_var.set(0)
+    StarTrack_var.set(0)
+    entry_weapon.delete(0, END)
+    entry_minprice.delete(0, END)
+    entry_maxprice.delete(0, END)
+    entry_mingradient.delete(0, END)
+    entry_maxgradient.delete(0, END)
+    combobox_types.set('')
+    combobox_colours.set('')
+    combobox_qualities.set('')
+    combobox_rarities.set('')
+    :rtype: - 
+    """
+    entry_weapon.delete(0, END)
+    entry_minprice.delete(0, END)
+    entry_maxprice.delete(0, END)
+    entry_mingradient.delete(0, END)
+    entry_maxgradient.delete(0, END)
+    combobox_types.set('')
+    combobox_colours.set('')
+    combobox_qualities.set('')
+    combobox_rarities.set('')
+
+
+    
+def change_mode_menu(new_appearance_mode):
+    """Изменение режима внешнего вида приложения.
+
+    Функция изменяет режим внешнего вида приложения на основе выбранного значения из выпадающего меню.
+
+    :params: new_appearance_mode (str): Выбранное значение из выпадающего меню (System, Dark, Light).
+    (Кнопка 'Steam Items Search' на главном экране)
+    :raise: -
+    :return: - (изменяет цветовую тему главного экрана приложения)
+    :rtype: - 
+    """
+    ctk.set_appearance_mode(new_appearance_mode)
+
 
 
 def MainFunc():
+    """Принимает файл с данными о предметах
+
+       Создаёт пустой словарь
+       Заполняет элементами вида ключ-значение словарь, беря значение из каждого элемента интерфейса
+       Преобразует словарь в Json файл
+       Отправляет данные на сервер
+       Принимает файл r.json() и рабтает с ним
+       Создаёт новое окно приложения(дочернее окно приложения)
+       В соответствии с количесвтом элементов в принимаемом файле создаёт элементы интерфейса для нового окна
+       Выводит данные с r.json() файла
+       
+    :params: нет параметров, функция срабатывает при нажати кнопки submit_button(Кнопка 'Search' на главном экране)
+    :raise: tk.messagebox.showinfo('', ('Ничего не найдено')) if r.json() == [{'errors': 'No information with this request'}]
+    :return: r.json() if r.status_code == 200:
+    :return: [{"errors": "Something with server"}] if r.status_code != 200
+    :rtype: list
+    """
     dictionary = {}
     value = entry_weapon.get()
     if value != '':
@@ -428,250 +533,9 @@ def MainFunc():
         return [{"errors": "Something with server"}]
 
 
-# Функция, срабатывающая при нажати на кнопку Steam Item Search
-def steamfunc():
-    formdict = {}
-    steam_window = Toplevel(app)
-    steam_window.title('Steam Search')
-    steam_window.geometry('600x600')
-    balance_label = ctk.CTkLabel(steam_window, text=('Enter Balance:'), text_color='black', font=('Bold', 20))
-    balance_label.place(x=0, y=0)
-    balance_entry = ctk.CTkEntry(steam_window, width=70, height=10, corner_radius=5)
-    balance_entry.place(x=132, y=2)
-
-    # Функция, срабатывающая при нажатии на кнопку search в окне Steam Search
-    def sendform():
-        balance = balance_entry.get()
-        if balance != '':
-            if balance.isdigit():
-                formdict["value"] = float(balance)
-                v = json.dumps(formdict)
-                print(v)
-                print(type(v))
-                return v
-            else:
-                tk.messagebox.showinfo('Ошибка ввода', ('Поле ввода баланса должно состоять из числовых значений'))
-                return 0
-        else:
-            tk.messagebox.showinfo('Ошибка ввода', ('Введите баланс'))
-            return 0
-
-    steam_searchbtn = ctk.CTkButton(steam_window, text='Search', command=sendform, corner_radius=30)
-    steam_searchbtn.place(x=0, y=40)
 
 
-# Функция, которая срабатывает при нажатии на кнопку Clean Values
-def clear():
-    entry_weapon.delete(0, END)
-    entry_minprice.delete(0, END)
-    entry_maxprice.delete(0, END)
-    entry_mingradient.delete(0, END)
-    entry_maxgradient.delete(0, END)
-    combobox_types.set('')
-    combobox_colours.set('')
-    combobox_qualities.set('')
-    combobox_rarities.set('')
-    tag_var.set(0)
-    stickers_var.set(0)
-    souvenir_var.set(0)
-    StarTrack_var.set(0)
 
 
-# Функция, срабатывающая при смене оформления
-#########Заимствованная функция###################
-def change_mode_menu(new_appearance_mode):
-    ctk.set_appearance_mode(new_appearance_mode)
 
 
-#########Конец заимствованной функции#############
-
-# Название Приложения
-label_naiming = ctk.CTkLabel(app, text='TradeApp')
-label_naiming.place(x=340, y=0)
-# Текст Name Of Item
-label_weaponname = ctk.CTkLabel(app, text='Name Of Item:')
-label_weaponname.place(x=0, y=18)
-# Поле ввода для поиска предметов
-entry_weapon = ctk.CTkEntry(app, width=100, placeholder_text='Search...', corner_radius=5)
-entry_weapon.place(x=0, y=40)
-# Текст цены
-label_price = ctk.CTkLabel(app, text='Price:')
-label_price.place(x=0, y=67)
-# Текст From
-label_from = ctk.CTkLabel(app, text='From:')
-label_from.place(x=0, y=90)
-# Текст To
-label_to = ctk.CTkLabel(app, text='To:')
-label_to.place(x=90, y=90)
-# Поле ввода минимальной цены
-entry_minprice = ctk.CTkEntry(app, width=50)
-entry_minprice.place(x=35, y=90)
-# Поле ввода максимальной цены
-entry_maxprice = ctk.CTkEntry(app, width=50)
-entry_maxprice.place(x=110, y=90)
-# Текст типа предмета
-label_type = ctk.CTkLabel(app, text='Type Of Weapon:')
-label_type.place(x=0, y=120)
-# Словарь с видами предметов
-types = {'': '', 'Ножи': 2, 'Штурмовые Винтовки': 3,
-         'Снайперские винтовки': 4, 'Пистолеты': 5,
-         'Пистолеты-пулемёты': 6, 'Дробовики': 7, 'Пулемёты': 8,
-         'Перчатки': 13}
-# Выпадающий список для типов предметов
-combobox_types = ctk.CTkComboBox(app, values=tuple(types.keys()), state='readonly')
-# combobox_types.SelectedItem = ''
-combobox_types.place(x=0, y=145)
-# Текст качества предемтов
-label_Quality = ctk.CTkLabel(app, text='Quality:')
-label_Quality.place(x=200, y=18)
-# Словарь для качества предметов
-qualities = {'': '', 'FactoryNew': 'fn', 'MinimalWear': 'mw',
-             'FieldTested': 'ft', 'WellWorn': 'ww',
-             'BattleScared': 'bs'}
-# Выпадающий список с качеством предметов
-combobox_qualities = ctk.CTkComboBox(app, values=tuple(qualities.keys()), state='readonly')
-# combobox_qualities.SelectedItem = ''
-combobox_qualities.place(x=200, y=40)
-# Текст цвета предмета
-label_Color = ctk.CTkLabel(app, text='Color:')
-label_Color.place(x=200, y=67)
-# Словарь с цветами предметов
-colours = {'': '', 'Orange': 1, 'Blue': 2,
-           'Yellow': 3, 'Green': 4, 'Purple': 5,
-           'Grey': 6, 'Brown': 7}
-# Выпадающий список для цветов
-combobox_colours = ctk.CTkComboBox(app, values=tuple(colours.keys()), state='readonly')
-# combobox_colours.SelectedItem = ''
-combobox_colours.place(x=200, y=90)
-# Текст NameTag
-label_NameTag = ctk.CTkLabel(app, text='NameTag:')
-label_NameTag.place(x=200, y=120)
-###Переменная, фиксирующая значение переключателей NAMETAG
-tag_var = ctk.IntVar()
-###Создание переключателей для тегов
-yestag = ctk.CTkRadioButton(app, text='Yes', variable=tag_var, value=1)
-notag = ctk.CTkRadioButton(app, text='No', variable=tag_var, value=2)
-nothingstickers = ctk.CTkRadioButton(app, text='No Matter', variable=tag_var, value=3)
-###Размещение переключателей для тегов
-yestag.place(x=200, y=150)
-notag.place(x=265, y=150)
-nothingstickers.place(x=200, y=180)
-
-# Текст Stickers
-label_Stickers = ctk.CTkLabel(app, text='Stickers:')
-label_Stickers.place(x=400, y=18)
-
-# Создание переключателей для стикеров
-stickers_var = ctk.IntVar()
-
-###Создание переключателей для тегов
-yesstickers = ctk.CTkRadioButton(app, text='Yes', variable=stickers_var, value=4)
-nostickers = ctk.CTkRadioButton(app, text='No', variable=stickers_var, value=5)
-nothingstickers = ctk.CTkRadioButton(app, text='No Matter', variable=stickers_var, value=6)
-
-###Размещение переключателей для тегов
-yesstickers.place(x=400, y=40)
-nostickers.place(x=465, y=40)
-nothingstickers.place(x=400, y=65)
-
-# Текст Souvenir
-label_Souvenir = ctk.CTkLabel(app, text='Souvenir:')
-label_Souvenir.place(x=400, y=86)
-
-# Создание переключателей для стикеров
-souvenir_var = ctk.IntVar()
-
-###Создание переключателей для сувенирности
-yessouvenir = ctk.CTkRadioButton(app, text='Yes', variable=souvenir_var, value=7)
-nosouvenir = ctk.CTkRadioButton(app, text='No', variable=souvenir_var, value=8)
-nothingsouvenirs = ctk.CTkRadioButton(app, text='No Matter', variable=souvenir_var, value=9)
-
-###Размещение переключателей для сувенирности
-yessouvenir.place(x=400, y=110)
-nosouvenir.place(x=465, y=110)
-nothingsouvenirs.place(x=400, y=135)
-
-# Текст StatTrak
-label_StarTrack = ctk.CTkLabel(app, text='StatTrak:')
-label_StarTrack.place(x=400, y=157)
-
-# Создание переключателей для стикеров
-StarTrack_var = ctk.IntVar()
-
-###Создание переключателей для тегов
-yesStarTrack = ctk.CTkRadioButton(app, text='Yes', variable=StarTrack_var, value=10)
-noStarTrack = ctk.CTkRadioButton(app, text='No', variable=StarTrack_var, value=11)
-nothingStarTrack = ctk.CTkRadioButton(app, text='No Matter', variable=StarTrack_var, value=12)
-
-###Размещение переключателей для тегов
-yesStarTrack.place(x=400, y=180)
-noStarTrack.place(x=465, y=180)
-nothingStarTrack.place(x=400, y=205)
-
-# Текст Rarity
-label_Rarity = ctk.CTkLabel(app, text='Rarity:')
-label_Rarity.place(x=550, y=18)
-
-# Массив для Rarity
-rarityarr = ['', 'Consumer Grade', 'Industrial Grade',
-             'Mil-Spec Grade', 'Restricted',
-             'Classified', 'Covert']
-
-# Выпадающий список с Rarity
-combobox_rarities = ctk.CTkComboBox(app, values=rarityarr, state='readonly')
-combobox_rarities.place(x=550, y=40)
-
-# Текст Gradient
-label_Gradient = ctk.CTkLabel(app, text='Gradient:')
-label_Gradient.place(x=550, y=67)
-
-# Текст для минимального Градиента
-label_mingradient = ctk.CTkLabel(app, text='From:')
-label_mingradient.place(x=550, y=90)
-
-# Текст для максимального Градиента
-label_maxgradient = ctk.CTkLabel(app, text='To:')
-label_maxgradient.place(x=640, y=90)
-
-# Поле ввода минимального градиента
-entry_mingradient = ctk.CTkEntry(app, width=50)
-entry_mingradient.place(x=585, y=90)
-
-# Поле ввода максимального градиента
-entry_maxgradient = ctk.CTkEntry(app, width=50)
-entry_maxgradient.place(x=660, y=90)
-
-# Кнопка Search
-submit_button = ctk.CTkButton(app, text='Search', command=MainFunc, corner_radius=30)
-submit_button.place(x=550, y=180)
-
-# Кнопка очистки данных
-clear_button = ctk.CTkButton(app, text='Clear Values', command=clear, corner_radius=30)
-clear_button.place(x=550, y=215)
-
-# Текст Фильтр:
-label_Filtres = ctk.CTkLabel(app, text='Фильтр:')
-label_Filtres.place(x=550, y=120)
-
-# Словарь для значений комбобокса с Пармаетрами
-kriteriy = {'По цене': 1, 'По времени': 2}
-
-# Выпадающий список критериев:
-combobox_kriteries = ctk.CTkComboBox(app, values=tuple(kriteriy.keys()), state='readonly')
-combobox_kriteries.set('По цене')
-combobox_kriteries.place(x=550, y=145)
-
-########Заимствованная часть кода#########
-# Выпадающий список со сменой текущего оформления
-appearance_mode_option_menu = ctk.CTkOptionMenu(app, values=["System", "Dark", "Light"], command=change_mode_menu,
-                                                corner_radius=30)
-appearance_mode_option_menu.grid(row=3, column=0, columnspan=4)
-appearance_mode_option_menu.place(x=550, y=250)
-########Конец заимствованной части кода#########
-
-
-# Кнопка Steam Items Search
-steam_button = ctk.CTkButton(app, text='Steam Items Search', command=steamfunc, corner_radius=30)
-steam_button.place(x=550, y=285)
-
-app.mainloop()

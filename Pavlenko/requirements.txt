@@ -1,0 +1,9 @@
+tkinter==8.6
+customtkinter==5.2.1
+Flask==3.0.0
+forex-python==1.8
+pytest==7.4.3
+requests==2.31.0
+simplejson==3.19.2
+
+
