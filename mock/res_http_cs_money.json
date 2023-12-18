@@ -1,0 +1,163 @@
+{
+    "items": [
+        {
+            "id": 13887833,
+            "appId": 730,
+            "seller": {
+                "steamId64": "76561198203591217",
+                "botId": null,
+                "delivery": {
+                    "speed": "fast",
+                    "medianTime": 7.36,
+                    "successRate": 92.31
+                }
+            },
+            "asset": {
+                "id": 29955106415,
+                "names": {
+                    "short": "\u2605 Karambit | Case Hardened",
+                    "full": "\u2605 Karambit | Case Hardened (Factory New)",
+                    "identifier": 18316
+                },
+                "images": {
+                    "screenshot": "https://s1.cs.money/ed669b34b82ed8e46b09b8bb4f1deb9f_image.jpg",
+                    "steam": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf2PLacDBA5ciJlZG0mP74Nr_ummJW4NE_37vHrN6n0VDm8kVsNWz2IYHEeg89MFHZqQK4xue5hJe0vc_NwSZqsj5iuyizSJQHPQ",
+                    "preview": "https://s1.cs.money/ed669b34b82ed8e46b09b8bb4f1deb9f_large_preview.png"
+                },
+                "isSouvenir": false,
+                "isStatTrak": false,
+                "quality": "fn",
+                "rarity": "Covert",
+                "pattern": 4,
+                "type": 2,
+                "color": 2,
+                "collection": {
+                    "name": null,
+                    "image": null
+                },
+                "float": 0.008998760953545,
+                "inspect": "17025895843308993151",
+                "rank": "Rank 1",
+                "backSide": 70,
+                "playSide": 68
+            },
+            "stickers": null,
+            "pricing": {
+                "default": 1915.02,
+                "priceBeforeDiscount": 27507.62,
+                "extra": {
+                    "pattern": 25592.6
+                },
+                "discount": -0.9994,
+                "computed": 54999
+            },
+            "links": {
+                "3d": "https://3d.cs.money/item/ed669b34b82ed8e46b09b8bb4f1deb9f"
+            }
+        },
+        {
+            "id": 15645200,
+            "appId": 730,
+            "seller": {
+                "steamId64": "76561199074496926",
+                "botId": null,
+                "delivery": {
+                    "speed": "fast",
+                    "medianTime": 4.35,
+                    "successRate": 95.56
+                }
+            },
+            "asset": {
+                "id": 34880894110,
+                "names": {
+                    "short": "Glock-18 | Wasteland Rebel",
+                    "full": "StatTrak\u2122 Glock-18 | Wasteland Rebel (Factory New)",
+                    "identifier": 1022
+                },
+                "images": {
+                    "screenshot": "https://screenshots.cs.money/csmoney2/3a79813a671fceff6cfbc6c4bf06c418_image.jpg",
+                    "steam": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposbaqKAxf0Ob3djFN79eJg4GYg_L4MrXVqXlU6sB9teXI8oThxgbs_0tlajihJ4PAd1c8aAvWrwXsx-q9h8fqvZTNmic2uylz5SqJlxypwUYbBM1DXmo",
+                    "preview": "https://screenshots.cs.money/csmoney2/3a79813a671fceff6cfbc6c4bf06c418_large_preview.png"
+                },
+                "isSouvenir": false,
+                "isStatTrak": true,
+                "quality": "fn",
+                "rarity": "Covert",
+                "pattern": 667,
+                "type": 5,
+                "caseName": "Gamma Case",
+                "color": 7,
+                "collection": {
+                    "name": "Gamma",
+                    "image": null
+                },
+                "float": 0.06060800328850746,
+                "inspect": "10289852165909286338",
+                "rank": null
+            },
+            "stickers": null,
+            "pricing": {
+                "default": 40.41,
+                "priceBeforeDiscount": 40.41,
+                "extra": null,
+                "discount": 0.2106,
+                "computed": 31.9
+            },
+            "links": {
+                "3d": "https://3d.cs.money/item/3a79813a671fceff6cfbc6c4bf06c418"
+            }
+        },
+        {
+            "id": 15305618,
+            "appId": 730,
+            "seller": {
+                "steamId64": "76561198017166652",
+                "botId": null,
+                "delivery": {
+                    "speed": "fast",
+                    "medianTime": 7.7,
+                    "successRate": 100
+                }
+            },
+            "asset": {
+                "id": 34793908668,
+                "names": {
+                    "short": "Glock-18 | Wasteland Rebel",
+                    "full": "StatTrak\u2122 Glock-18 | Wasteland Rebel (Factory New)",
+                    "identifier": 1022
+                },
+                "images": {
+                    "screenshot": "https://screenshots.cs.money/csmoney2/8fff545f7d226580c15c342b49921b4a_image.jpg",
+                    "steam": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposbaqKAxf0Ob3djFN79eJg4GYg_L4MrXVqXlU6sB9teXI8oThxgbs_0tlajihJ4PAd1c8aAvWrwXsx-q9h8fqvZTNmic2uylz5SqJlxypwUYbBM1DXmo",
+                    "preview": "https://screenshots.cs.money/csmoney2/8fff545f7d226580c15c342b49921b4a_large_preview.png"
+                },
+                "isSouvenir": false,
+                "isStatTrak": true,
+                "quality": "fn",
+                "rarity": "Covert",
+                "pattern": 725,
+                "type": 5,
+                "caseName": "Gamma Case",
+                "color": 7,
+                "collection": {
+                    "name": "Gamma",
+                    "image": null
+                },
+                "float": 0.06156928464770317,
+                "inspect": "14747081711373181186",
+                "rank": null
+            },
+            "stickers": null,
+            "pricing": {
+                "default": 40.41,
+                "priceBeforeDiscount": 40.41,
+                "extra": null,
+                "discount": 0.2094,
+                "computed": 31.95
+            },
+            "links": {
+                "3d": "https://3d.cs.money/item/8fff545f7d226580c15c342b49921b4a"
+            }
+        }
+    ]
+}

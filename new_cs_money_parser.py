@@ -2,14 +2,21 @@ import requests
 from config_file import errors
 from config_file import undefined
 maxItems = 5
+
+
 def find_information(info):
-    link = "https://cs.money/1.0/market/sell-orders?limit=60"
-    # так как я удаляю некоторые параметры, то в info эти парметры уже не содержатся,
-    # тогда в info будут содержаться все необходимые для удаления ключи и их значения
+    """
+    Ф-ия находит на странице https://cs.money/ maxItems кол-во элементов, соотв. ключам, введёного словаря и
+    отфильтровывает параметры этих предметов
+    :param info: словарь, содержащий в себе параметры, соотв. query params
+    :type info: dict
+    :returns: список, содержащий в себе словари, который соотв. каким-то предеметам с сайта https://cs.money/
+    :rtype: list
+    """
+    link = "https://cs.money/1.0/market/sell-orders?limit=60&order=asc&sort=price"
     for element in list(info.keys()):
         if info[element] == undefined:
             del info[element]
-    info["order"] = "asc" # сортировка по возрастанию цены
     req = requests.get(link, params=info)
     # возвращает мне массив, состоящий из необходимых элементов
     if req.status_code == 200:
@@ -52,7 +59,7 @@ def find_information(info):
                     response["price"] = item.get("pricing").get("computed")
                     response["marketPlace"] = "CS-MONEY"
                     response_list.append(response)
-                    return response_list
+                return response_list
             except Exception:
                 return [errors[1]]
         else:

@@ -1,19 +1,21 @@
 import requests
+from config_file import errors
 from forex_python.converter import CurrencyRates
 currency = CurrencyRates()
 
+
 def output_cs_money(value):
+    """
+    Ф-ия принимает на вход сумму денег в Steam, и выводит список предметов с сайта https://cs.money/,
+    а также их суммарную цену в Steam
+    :param value: сумма на кошельке Steam
+    :type value: int
+    :return: кортеж, состоящий из списка элементов сайта https://cs.money/ и суммы этих элементов в соотв. с площадкой
+    Steam
+    :rtype: tuple
+    """
     link = "https://cs.money/1.0/market/sell-orders?limit=60"
-    '''
-    первая причина, по которой я предаю в качестве минимальной цены значение равное 0,9
-    это очень большая нагрузка на сервер в таком случае,  + в среденем, почему-то цена для предметов в диапозоне больших чисел, 
-    т.е. то в примере от 4500 до 5000 цена скинов в стиме будет больше, чем в том же самом опыте с 0 до 5000.
-    '''
-    info = {"minPrice": 0.9*value, "maxPrice": value, "order": "asc"} #asc - значение ключа, выстраивающего все предмета от минимальной до макс. цены
-    '''
-    try и except специально добавлены, так как может произойти такое, что сервак вернёт json, в котором просто 
-    отсутсвуют необходимые нам элементы
-    '''
+    info = {"minPrice": 0.9*value, "maxPrice": value, "order": "asc", "sort": "price"}
     try:
         req = requests.get(link, params=info)
         response_items = req.json()["items"]
@@ -23,7 +25,8 @@ def output_cs_money(value):
             min_diff = response_items[0]["pricing"]["default"] - response_items[0]["pricing"]["computed"]
             index_of_min_elem = 0
             for elem_index in range(len(response_items)):
-                diff = response_items[elem_index]["pricing"]["default"] - response_items[elem_index]["pricing"]["computed"]
+                diff = (response_items[elem_index]["pricing"]["default"] -
+                        response_items[elem_index]["pricing"]["computed"])
                 if diff < min_diff:
                     min_diff = diff
                     index_of_min_elem = elem_index
@@ -34,15 +37,26 @@ def output_cs_money(value):
                 item_pushed = dict()
                 item_pushed["name"] = deleted_item.get("asset").get("names").get("short")
                 item_pushed["image"] = deleted_item.get("asset").get("images").get("steam")
-                item_pushed["info"] =deleted_item.get("seller").get("steamId64")
+                item_pushed["info"] = deleted_item.get("seller").get("steamId64")
                 list_of_items.append(item_pushed)
         return list_of_items, sums_of_items
-    except KeyError:
-        return [{"errors": "There's nothing here"}, 0]
+    except Exception:
+        return errors[1], 0
+
+
 def output_skinbaron_parser(value):
+    """
+    Ф-ия принимает на вход сумму денег в Steam, и выводит список предметов с сайта https://skinbaron.de/en,
+    а также их суммарную цену в Steam
+    :param value: сумма на кошельке Steam
+    :type value: int
+    :return: кортеж, состоящий из списка элементов сайта https://skinbaron.de/en и суммы этих элементов в соотв. с
+    площадкой Steam
+    :rtype: tuple
+    """
     link = "https://skinbaron.de/api/v2/Browsing/FilterOffers?appId=730&sort=CF&language=eng"
     value = round(currency.get_rates("USD")["EUR"]*value, 2)
-    info = {"plb": 0.9*value, "pub": value}
+    info = {"plb": round(0.9*value, 2), "pub": value}
     try:
         req = requests.get(link, params=info)
         print(req.url)
@@ -53,7 +67,8 @@ def output_skinbaron_parser(value):
             min_diff = response_items[0]["steamMarketPrice"] - response_items[0]["singleOffer"]["itemPrice"]
             index_of_min_elem = 0
             for elem_index in range(len(response_items)):
-                diff = response_items[elem_index]["steamMarketPrice"] - response_items[elem_index]["singleOffer"]["itemPrice"]
+                diff = (response_items[elem_index]["steamMarketPrice"]
+                        - response_items[elem_index]["singleOffer"]["itemPrice"])
                 if diff < min_diff:
                     min_diff = diff
                     index_of_min_elem = elem_index
@@ -67,13 +82,22 @@ def output_skinbaron_parser(value):
                 item_pushed["info"] = "https://skinbaron.de/en/" + deleted_item.get("offerLink")
                 list_of_items.append(item_pushed)
         return list_of_items, currency.get_rates("EUR")["USD"]*sums_of_items
-    except KeyError:
-        return [{"errors": "There's nothing here"}, 0]
+    except Exception:
+        return errors[1], 0
+
+
 def final_output(money):
+    """
+    Ф-ия также принимает на вход кол-во денег на кошельке в Steam, вызывает две предыдущие ф-ии
+    и сравнивает значения, которые эти ф-ии возвращают, между собой.
+    :param money: это сумма на кошельке в Steam
+    :type money: int
+    :return: список, состоящий из предметов, предполагаемых для покупки, суммы этих предметов на площадке Steam, а также
+    названия площадки, на которой эти предметы можно продать.
+    :rtype: list
+    """
     cs_money = output_cs_money(money)
-    print("cs_money: ", cs_money[1])
     skinbaron = output_skinbaron_parser(money)
-    print("skinbaron: ", skinbaron[1])
     if cs_money[1] > skinbaron[1]:
         response = cs_money[0]
         response.append({"sumsOfItems": cs_money[1]})
@@ -84,4 +108,3 @@ def final_output(money):
         response.append({"sumsOfItems": skinbaron[1]})
         response.append({"marketPlace": "SKINBARON"})
         return response
-

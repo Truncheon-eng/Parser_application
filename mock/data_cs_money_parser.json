@@ -1,0 +1,38 @@
+[
+    {
+        "delivery": 7.36,
+        "name": "\u2605 Karambit | Case Hardened",
+        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf2PLacDBA5ciJlZG0mP74Nr_ummJW4NE_37vHrN6n0VDm8kVsNWz2IYHEeg89MFHZqQK4xue5hJe0vc_NwSZqsj5iuyizSJQHPQ",
+        "isSouvenir": false,
+        "isStatTrak": false,
+        "rarity": "Covert",
+        "float": 0.008998760953545,
+        "stickers": "undefined",
+        "price": 54999,
+        "marketPlace": "CS-MONEY"
+    },
+    {
+        "delivery": 4.35,
+        "name": "Glock-18 | Wasteland Rebel",
+        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposbaqKAxf0Ob3djFN79eJg4GYg_L4MrXVqXlU6sB9teXI8oThxgbs_0tlajihJ4PAd1c8aAvWrwXsx-q9h8fqvZTNmic2uylz5SqJlxypwUYbBM1DXmo",
+        "isSouvenir": false,
+        "isStatTrak": true,
+        "rarity": "Covert",
+        "float": 0.06060800328850746,
+        "stickers": "undefined",
+        "price": 31.9,
+        "marketPlace": "CS-MONEY"
+    },
+    {
+        "delivery": 7.7,
+        "name": "Glock-18 | Wasteland Rebel",
+        "image": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposbaqKAxf0Ob3djFN79eJg4GYg_L4MrXVqXlU6sB9teXI8oThxgbs_0tlajihJ4PAd1c8aAvWrwXsx-q9h8fqvZTNmic2uylz5SqJlxypwUYbBM1DXmo",
+        "isSouvenir": false,
+        "isStatTrak": true,
+        "rarity": "Covert",
+        "float": 0.06156928464770317,
+        "stickers": "undefined",
+        "price": 31.95,
+        "marketPlace": "CS-MONEY"
+    }
+]
