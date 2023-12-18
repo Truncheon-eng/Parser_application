@@ -446,9 +446,9 @@ def steamfunc():
             if balance.isdigit():
                 formdict["value"] = float(balance)
                 v = json.dumps(formdict)
-                #print(v)
-                #print(type(v))
-                return v
+                r = requests.post("http://localhost:5000/steamSearch", data=v, headers=headers)
+                print(r.json())
+                return r
             else:
                 tk.messagebox.showinfo('Ошибка ввода', ('Поле ввода баланса должно состоять из числовых значений'))
                 return 0

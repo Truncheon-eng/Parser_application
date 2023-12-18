@@ -31,11 +31,15 @@ def unstandart(info):
         info["pub"] = round(currency.get_rates("USD")["EUR"] * info.pop("maxPrice"), 2)
     if info["quality"] != undefined:
         quality_dict = {"fn": 0, "mw": 1, "ft": 2, "ww": 3, "bs": 4}
-        info["quality"] = quality_dict[info["quality"]]
+        info["wf"] = quality_dict[info.pop("quality")]
     if info["rarity"] != undefined:
         rarity_list = {"Consumer Grade": 2, "Industrial Grade": 4, "Mil-Spec Grade": 6,
                        "Restricted": 8, "Classified": 10, "Covert": 12}
-        info["rarity"] = rarity_list[info["rarity"]]
+        info["qf"] = rarity_list[info.pop("rarity")]
+    info["hasNameTag"] = undefined
+    info["color"] = undefined
+    info["minFade"] = undefined
+    info["maxFade"] = undefined
 
 
 def find_information(info):
@@ -56,6 +60,7 @@ def find_information(info):
     # проверка статуса присылаемых данных
     if requests.get(link, params=info).status_code == 200:
         response = requests.get(link, params=info).json()
+        print(requests.get(link, params=info).url)
         if len(response.get("aggregatedMetaOffers")) == 0:
             return [errors[0]]
         else:
@@ -102,7 +107,7 @@ def find_information(info):
                     item_response["marketPlace"] = "SKINBARON"
                     list_of_response.append(item_response)
                 return list_of_response
-            except Exception:
+            except Exception: #TODO: изменить на KeyError и AttributeError
                 return [errors[1]]
     else:
         return [errors[2]]
