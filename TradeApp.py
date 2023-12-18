@@ -142,7 +142,7 @@ def MainFunc():
 
     x = json.dumps(dictionary)
     r = requests.post("http://localhost:5000", data=x, headers=headers)
-    print(r.json())
+    #print(r.json())
 
     if r.json() == [{'errors': 'No information with this request'}]:
         tk.messagebox.showinfo('', ('Ничего не найдено'))
@@ -421,7 +421,7 @@ def MainFunc():
 
     a = r.json()
     if r.status_code == 200:
-        print(type(r.json()))
+        #print(type(r.json()))
         return r.json()
     else:
         tk.messagebox.showinfo('Server Error', ('Something with server'))
@@ -446,8 +446,8 @@ def steamfunc():
             if balance.isdigit():
                 formdict["value"] = float(balance)
                 v = json.dumps(formdict)
-                print(v)
-                print(type(v))
+                #print(v)
+                #print(type(v))
                 return v
             else:
                 tk.messagebox.showinfo('Ошибка ввода', ('Поле ввода баланса должно состоять из числовых значений'))
