@@ -1,5 +1,6 @@
 from new_cs_money_parser import find_information as find_cs_money
 from new_skinbaron_parser import find_information as find_skinbaron
+from config_file import maxItems
 
 
 def merge(data_1, data_2, key_):
@@ -53,5 +54,5 @@ def comparision(dictionary_info):
     else:
         data_cs_money.sort(key=lambda x: x[sth_filter])
         data_skinbaron.sort(key=lambda x: x[sth_filter])
-        data = merge(data_cs_money, data_skinbaron, sth_filter)[0:5]
+        data = merge(data_cs_money, data_skinbaron, sth_filter)[0:maxItems]
     return data
