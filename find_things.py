@@ -1,6 +1,7 @@
 import requests
 from config_file import errors
-from forex_python.converter import CurrencyRates
+# from forex_python.converter import CurrencyRates
+from config_file import CurrencyRates
 currency = CurrencyRates()
 
 
@@ -9,7 +10,7 @@ def output_cs_money(value):
     Ф-ия принимает на вход сумму денег в Steam, и выводит список предметов с сайта https://cs.money/,
     а также их суммарную цену в Steam
     :param value: сумма на кошельке Steam
-    :type value: int
+    :type value: float
     :return: кортеж, состоящий из списка элементов сайта https://cs.money/ и суммы этих элементов в соотв. с площадкой
     Steam
     :rtype: tuple
@@ -49,7 +50,7 @@ def output_skinbaron_parser(value):
     Ф-ия принимает на вход сумму денег в Steam, и выводит список предметов с сайта https://skinbaron.de/en,
     а также их суммарную цену в Steam
     :param value: сумма на кошельке Steam
-    :type value: int
+    :type value: float
     :return: кортеж, состоящий из списка элементов сайта https://skinbaron.de/en и суммы этих элементов в соотв. с
     площадкой Steam
     :rtype: tuple
@@ -90,7 +91,7 @@ def final_output(money):
     Ф-ия также принимает на вход кол-во денег на кошельке в Steam, вызывает две предыдущие ф-ии
     и сравнивает значения, которые эти ф-ии возвращают, между собой.
     :param money: это сумма на кошельке в Steam
-    :type money: int
+    :type money: float
     :return: список, состоящий из предметов, предполагаемых для покупки, суммы этих предметов на площадке Steam, а также
     названия площадки, на которой эти предметы можно продать.
     :rtype: list

@@ -1,16 +1,22 @@
 import pytest
 
 from comparison_filter import merge
+
+
 def generate_datas(start_index, finish_index, step):
     data = list()
     for i in range(start_index, finish_index, step):
         data.append({"a": i, "b": 10})
     return data
 
+
 test_5_res = list()
+
+
 for i in range(6, 10):
     test_5_res.append({"a": i, "b": 10})
     test_5_res.append({"a": i, "b": 10})
+
 
 @pytest.mark.parametrize(
     "data_1, data_2, key_, response",

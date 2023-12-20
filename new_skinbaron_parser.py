@@ -3,7 +3,8 @@ from config_file import undefined
 from config_file import errors
 from config_file import maxItems
 # добавление библиотеки, отслеживающий курсы валют
-from forex_python.converter import CurrencyRates
+# from forex_python.converter import CurrencyRates
+from config_file import CurrencyRates
 currency = CurrencyRates()
 
 
@@ -40,6 +41,9 @@ def unstandart(info):
     info["color"] = undefined
     info["minFade"] = undefined
     info["maxFade"] = undefined
+    for element in list(info.keys()):
+        if info[element] == undefined:
+            del info[element]
 
 
 def find_information(info):
@@ -52,9 +56,6 @@ def find_information(info):
     :rtype: list
     """
     unstandart(info)
-    for element in list(info.keys()):
-        if info[element] == undefined:
-            del info[element]
     # CF - позволяет отсортировать список по возрастанию цены
     link = "https://skinbaron.de/api/v2/Browsing/FilterOffers?appId=730&sort=CF&language=eng"
     # проверка статуса присылаемых данных
@@ -106,7 +107,7 @@ def find_information(info):
                     item_response["marketPlace"] = "SKINBARON"
                     list_of_response.append(item_response)
                 return list_of_response
-            except Exception: #TODO: изменить на KeyError и AttributeError
+            except Exception:
                 return [errors[1]]
     else:
         return [errors[2]]
