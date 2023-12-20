@@ -27,14 +27,20 @@ with open('mock/changed_data_skinbaron.json', 'r', encoding="utf8") as fcc_file:
     changed_data = json.load(fcc_file)
 
 
+# ВО ВСЕХ ПОСЛЕДУЮЩИХ ТЕСТАХ, КРОМЕ test_merge_in_filter, test_unstandart, ИНФОРМАЦИЯ ОБ ИСПОЛЬЗОВАНИИ
+# ДЕКОРАТОРА БЫЛА НАЙДЕНА: https://github.com/getsentry/responses/blob/master/README.rst#response-parameters
 @responses.activate
+# ----->
 def test_if_aggregatedmetaoffers_is_empty_return_error():
     responses.get(url="https://skinbaron.de/api/v2/Browsing/FilterOffers?appId=730&sort=CF&language=eng",
                   json={"aggregatedMetaOffers": []})
     assert find_information(sample_dict.copy()) == [errors[0]]
 
 
+# ВО ВСЕХ ПОСЛЕДУЮЩИХ ТЕСТАХ, КРОМЕ test_merge_in_filter, test_unstandart, ИНФОРМАЦИЯ ОБ ИСПОЛЬЗОВАНИИ
+# ДЕКОРАТОРА БЫЛА НАЙДЕНА: https://github.com/getsentry/responses/blob/master/README.rst#response-parameters
 @responses.activate
+# ----->
 def test_return_correct_answer_if_data_is_valid():
     another_info = sample_dict.copy()
     another_info["type"] = 2
@@ -43,14 +49,20 @@ def test_return_correct_answer_if_data_is_valid():
     assert find_information(another_info) == answer
 
 
+# ВО ВСЕХ ПОСЛЕДУЮЩИХ ТЕСТАХ, КРОМЕ test_merge_in_filter, test_unstandart, ИНФОРМАЦИЯ ОБ ИСПОЛЬЗОВАНИИ
+# ДЕКОРАТОРА БЫЛА НАЙДЕНА: https://github.com/getsentry/responses/blob/master/README.rst#response-parameters
 @responses.activate
+# ----->
 def test_status_code_from_server_not_equal_200():
     responses.get(url="https://skinbaron.de/api/v2/Browsing/FilterOffers?appId=730&sort=CF&language=eng",
                   json={"error": "No data"}, status=500)
     assert find_information(sample_dict.copy()) == [errors[2]]
 
 
+# ВО ВСЕХ ПОСЛЕДУЮЩИХ ТЕСТАХ, КРОМЕ test_merge_in_filter, test_unstandart, ИНФОРМАЦИЯ ОБ ИСПОЛЬЗОВАНИИ
+# ДЕКОРАТОРА БЫЛА НАЙДЕНА: https://github.com/getsentry/responses/blob/master/README.rst#response-parameters
 @responses.activate
+# ----->
 def test_change_rarity():
     another_info = sample_dict.copy()
     another_info["rarity"] = "Covert"
